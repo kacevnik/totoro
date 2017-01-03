@@ -283,18 +283,6 @@ class ControllerProductLatest extends Controller {
 			);
 		}
 		
-		$this->data['sorts'][] = array(
-				'text'  => $this->language->get('text_model_asc'),
-				'value' => 'p.model-ASC',
-				'href'  => $this->url->link('product/latest', 'sort=p.model&order=ASC' . $url)
-		); 
-
-		$this->data['sorts'][] = array(
-			'text'  => $this->language->get('text_model_desc'),
-			'value' => 'p.model-DESC',
-			'href'  => $this->url->link('product/latest', 'sort=p.model&order=DESC' . $url)
-		);
-		
 		$url = '';
 
 		if (isset($this->request->get['sort'])) {

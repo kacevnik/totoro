@@ -153,6 +153,9 @@ class ControllerCheckoutGuestShipping extends Controller {
 			$this->session->data['guest']['shipping']['address_2'] = $this->request->post['address_2'];
 			$this->session->data['guest']['shipping']['postcode'] = $this->request->post['postcode'];
 			$this->session->data['guest']['shipping']['city'] = $this->request->post['city'];
+			$this->session->data['guest']['shipping']['dom'] = $this->request->post['dom'];
+			$this->session->data['guest']['shipping']['pod'] = $this->request->post['pod'];
+			$this->session->data['guest']['shipping']['kva'] = $this->request->post['kva'];
 			$this->session->data['guest']['shipping']['country_id'] = $this->request->post['country_id'];
 			$this->session->data['guest']['shipping']['zone_id'] = $this->request->post['zone_id'];
 			

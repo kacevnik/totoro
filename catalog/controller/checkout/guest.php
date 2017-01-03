@@ -168,6 +168,16 @@ class ControllerCheckoutGuest extends Controller {
 			if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
 				$json['error']['telephone'] = $this->language->get('error_telephone');
 			}
+			if ((utf8_strlen($this->request->post['street']) < 3) || (utf8_strlen($this->request->post['street']) > 32)) {
+				$json['error']['street'] = $this->language->get('error_street');
+			}
+			if ((utf8_strlen($this->request->post['dom']) < 1) || (utf8_strlen($this->request->post['dom']) > 32)) {
+				$json['error']['dom'] = $this->language->get('error_dom');
+			}
+
+			if (($this->request->post['city']) == '0') {
+				$json['error']['city'] = $this->language->get('error_city');
+			}
 
 			// Customer Group
 			$this->load->model('account/customer_group');
@@ -191,16 +201,6 @@ class ControllerCheckoutGuest extends Controller {
 					$json['error']['tax_id'] = $this->language->get('error_tax_id');
 				}						
 			}
-
-			if ((utf8_strlen($this->request->post['address_1']) < 3) || (utf8_strlen($this->request->post['address_1']) > 128)) {
-				$json['error']['address_1'] = $this->language->get('error_address_1');
-			}
-
-			if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 128)) {
-				$json['error']['city'] = $this->language->get('error_city');
-			}
-
-
 		}
 
 		if (!$json) {
@@ -230,7 +230,11 @@ class ControllerCheckoutGuest extends Controller {
 				$this->session->data['guest']['shipping']['lastname'] = $this->request->post['lastname'];
 				$this->session->data['guest']['shipping']['address_1'] = $this->request->post['address_1'];
 				$this->session->data['guest']['shipping']['city'] = $this->request->post['city'];
-
+				$this->session->data['guest']['shipping']['street'] = $this->request->post['street'];
+				$this->session->data['guest']['shipping']['dom'] = $this->request->post['dom'];
+				$this->session->data['guest']['shipping']['pod'] = $this->request->post['pod'];
+				$this->session->data['guest']['shipping']['eta'] = $this->request->post['eta'];
+				$this->session->data['guest']['shipping']['kva'] = $this->request->post['kva'];
 		
 				// Default Shipping Address
 

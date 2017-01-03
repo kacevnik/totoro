@@ -145,7 +145,7 @@ class ControllerCheckoutConfirm extends Controller {
 			$data['payment_tax_id'] = $payment_address['tax_id'];	
 			$data['payment_address_1'] = $payment_address['address_1'];
 			$data['payment_address_2'] = $payment_address['address_2'];
-			$data['payment_city'] = $payment_address['city'];
+			$data['payment_city'] = 'Москва';
 			$data['payment_postcode'] = $payment_address['postcode'];
 			$data['payment_zone'] = $payment_address['zone'];
 			$data['payment_zone_id'] = $payment_address['zone_id'];
@@ -177,9 +177,13 @@ class ControllerCheckoutConfirm extends Controller {
 				$data['shipping_firstname'] = $shipping_address['firstname'];
 				$data['shipping_lastname'] = $shipping_address['lastname'];	
 				$data['shipping_company'] = $shipping_address['company'];	
-				$data['shipping_address_1'] = $shipping_address['address_1'];
+				$data['shipping_address_1'] = 'ул. '.$shipping_address['street'];
+				$data['shipping_address_1'] .= ', дом: '.$shipping_address['dom'];
+				if($shipping_address['pod']){$data['shipping_address_1'] .= ', подъезд: '.$shipping_address['pod'];}
+				if($shipping_address['eta']){$data['shipping_address_1'] .= ', этаж: '.$shipping_address['eta'];}
+				if($shipping_address['kva']){$data['shipping_address_1'] .= ', квартира: '.$shipping_address['kva'];}
 				$data['shipping_address_2'] = $shipping_address['address_2'];
-				$data['shipping_city'] = $shipping_address['city'];
+				$data['shipping_city'] = 'Москва';
 				$data['shipping_postcode'] = $shipping_address['postcode'];
 				$data['shipping_zone'] = $shipping_address['zone'];
 				$data['shipping_zone_id'] = $shipping_address['zone_id'];

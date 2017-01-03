@@ -76,108 +76,6 @@ class ControllerAccountRegister extends Controller {
 
 		$this->data['button_continue'] = $this->language->get('button_continue');
 
-		if (isset($this->error['warning'])) {
-			$this->data['error_warning'] = $this->error['warning'];
-		} else {
-			$this->data['error_warning'] = '';
-		}
-
-		if (isset($this->error['firstname'])) {
-			$this->data['error_firstname'] = $this->error['firstname'];
-		} else {
-			$this->data['error_firstname'] = '';
-		}	
-
-		if (isset($this->error['lastname'])) {
-			$this->data['error_lastname'] = $this->error['lastname'];
-		} else {
-			$this->data['error_lastname'] = '';
-		}		
-
-		if (isset($this->error['email'])) {
-			$this->data['error_email'] = $this->error['email'];
-		} else {
-			$this->data['error_email'] = '';
-		}
-
-		if (isset($this->error['telephone'])) {
-			$this->data['error_telephone'] = $this->error['telephone'];
-		} else {
-			$this->data['error_telephone'] = '';
-		}
-
-		if (isset($this->error['password'])) {
-			$this->data['error_password'] = $this->error['password'];
-		} else {
-			$this->data['error_password'] = '';
-		}
-
-		if (isset($this->error['confirm'])) {
-			$this->data['error_confirm'] = $this->error['confirm'];
-		} else {
-			$this->data['error_confirm'] = '';
-		}
-
-		if (isset($this->error['company_id'])) {
-			$this->data['error_company_id'] = $this->error['company_id'];
-		} else {
-			$this->data['error_company_id'] = '';
-		}
-
-		if (isset($this->error['tax_id'])) {
-			$this->data['error_tax_id'] = $this->error['tax_id'];
-		} else {
-			$this->data['error_tax_id'] = '';
-		}
-
-		if (isset($this->error['address_1'])) {
-			$this->data['error_address_1'] = $this->error['address_1'];
-		} else {
-			$this->data['error_address_1'] = '';
-		}
-
-		if (isset($this->error['city'])) {
-			$this->data['error_city'] = $this->error['city'];
-		} else {
-			$this->data['error_city'] = '';
-		}
-
-		if (isset($this->error['street'])) {
-			$this->data['error_street'] = $this->error['street'];
-		} else {
-			$this->data['error_street'] = '';
-		}
-
-		if (isset($this->error['dom'])) {
-			$this->data['error_dom'] = $this->error['dom'];
-		} else {
-			$this->data['error_dom'] = '';
-		}
-
-		if (isset($this->error['kva'])) {
-			$this->data['error_kva'] = $this->error['kva'];
-		} else {
-			$this->data['error_kva'] = '';
-		}
-
-		if (isset($this->error['postcode'])) {
-			$this->data['error_postcode'] = $this->error['postcode'];
-		} else {
-			$this->data['error_postcode'] = '';
-		}
-
-		if (isset($this->error['country'])) {
-			$this->data['error_country'] = $this->error['country'];
-		} else {
-			$this->data['error_country'] = '';
-		}
-
-		if (isset($this->error['zone'])) {
-			$this->data['error_zone'] = $this->error['zone'];
-		} else {
-			$this->data['error_zone'] = '';
-		}
-
 		$this->data['action'] = $this->url->link('account/register', '', 'SSL');
 
 		if (isset($this->request->post['firstname'])) {
@@ -396,6 +294,108 @@ class ControllerAccountRegister extends Controller {
 			}
 
 			$this->redirect($this->url->link('account/success'));
+		}
+
+		if (isset($this->error['warning'])) {
+			$this->data['error_warning'] = $this->error['warning'];
+		} else {
+			$this->data['error_warning'] = '';
+		}
+
+		if (isset($this->error['firstname'])) {
+			$this->data['error_firstname'] = $this->error['firstname'];
+		} else {
+			$this->data['error_firstname'] = '';
+		}	
+
+		if (isset($this->error['lastname'])) {
+			$this->data['error_lastname'] = $this->error['lastname'];
+		} else {
+			$this->data['error_lastname'] = '';
+		}		
+
+		if (isset($this->error['email'])) {
+			$this->data['error_email'] = $this->error['email'];
+		} else {
+			$this->data['error_email'] = '';
+		}
+
+		if (isset($this->error['telephone'])) {
+			$this->data['error_telephone'] = $this->error['telephone'];
+		} else {
+			$this->data['error_telephone'] = '';
+		}
+
+		if (isset($this->error['password'])) {
+			$this->data['error_password'] = $this->error['password'];
+		} else {
+			$this->data['error_password'] = '';
+		}
+
+		if (isset($this->error['confirm'])) {
+			$this->data['error_confirm'] = $this->error['confirm'];
+		} else {
+			$this->data['error_confirm'] = '';
+		}
+
+		if (isset($this->error['company_id'])) {
+			$this->data['error_company_id'] = $this->error['company_id'];
+		} else {
+			$this->data['error_company_id'] = '';
+		}
+
+		if (isset($this->error['tax_id'])) {
+			$this->data['error_tax_id'] = $this->error['tax_id'];
+		} else {
+			$this->data['error_tax_id'] = '';
+		}
+
+		if (isset($this->error['address_1'])) {
+			$this->data['error_address_1'] = $this->error['address_1'];
+		} else {
+			$this->data['error_address_1'] = '';
+		}
+
+		if (isset($this->error['city'])) {
+			$this->data['error_city'] = $this->error['city'];
+		} else {
+			$this->data['error_city'] = '';
+		}
+
+		if (isset($this->error['street'])) {
+			$this->data['error_street'] = $this->error['street'];
+		} else {
+			$this->data['error_street'] = '';
+		}
+
+		if (isset($this->error['dom'])) {
+			$this->data['error_dom'] = $this->error['dom'];
+		} else {
+			$this->data['error_dom'] = '';
+		}
+
+		if (isset($this->error['kva'])) {
+			$this->data['error_kva'] = $this->error['kva'];
+		} else {
+			$this->data['error_kva'] = '';
+		}
+
+		if (isset($this->error['postcode'])) {
+			$this->data['error_postcode'] = $this->error['postcode'];
+		} else {
+			$this->data['error_postcode'] = '';
+		}
+
+		if (isset($this->error['country'])) {
+			$this->data['error_country'] = $this->error['country'];
+		} else {
+			$this->data['error_country'] = '';
+		}
+
+		if (isset($this->error['zone'])) {
+			$this->data['error_zone'] = $this->error['zone'];
+		} else {
+			$this->data['error_zone'] = '';
 		}
 
 		$this->children = array(

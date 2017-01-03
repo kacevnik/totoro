@@ -15,20 +15,36 @@
   <span class="required">*</span> <?php echo $entry_telephone; ?><br />
   <input type="text" name="telephone" value="<?php echo $telephone; ?>" class="large-field" />
   <br />
-
   <br />
 </div>
 <div class="right">
   <h2><?php echo $text_your_address; ?></h2>
 
-  <span class="required">*</span> <?php echo $entry_address_1; ?><br />
-  <input type="text" name="address_1" value="<?php echo $address_1; ?>" class="large-field" />
-  <br />
-  <br />
-
   <span class="required">*</span> <?php echo $entry_city; ?><br />
-  <input type="text" name="city" value="<?php echo $city; ?>" class="large-field" />
-
+  <select name="city" class="large-field">
+  		<option checked="checked" value="0">Выбрать город</option>
+  		<option value="1">Москва</option>
+  </select>
+  <br>
+  <br>
+  <span class="required">*</span> Улица<br />
+  <input type="text" name="street" value="" class="large-field" />
+   <br>
+  <br>
+  <span class="required">*</span> Дом<br />
+  <input type="text" name="dom" value="" class="large-field" />
+   <br>
+  <br>
+   Подъезд<br />
+  <input type="text" name="pod" value="" class="large-field" />
+  <br>
+  <br>
+  Этаж<br />
+  <input type="text" name="eta" value="" class="large-field" />
+  <br>
+  <br>
+    Квартира<br />
+  <input type="text" name="kva" value="" class="large-field" />
 </div>
 <?php if ($shipping_required) { ?>
 <div style="clear: both; padding-top: 15px; border-top: 1px solid #DDDDDD;" class="shipping_address">

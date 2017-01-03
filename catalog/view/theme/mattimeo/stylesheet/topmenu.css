@@ -1,3 +1,7 @@
+.kdv_store_name{display: none;}
+.kdv_menu_logo{display: none;}
+#kdv_cart-total{display: none;}
+.kdv_w{display: none;}
 @media only screen and (max-width: 990px){
 .ma-nav-mobile-container{ position: relative;}
 .navbar .btn-navbar {
@@ -148,4 +152,158 @@ clear: both;
 }
 @media only screen and (max-width: 479px) {
 	.menu1 .mobilemenu .categories > span.head a, .menu1 .mobilemenu .linkinfo > span.head a{ width:280px;}
+	.navbar{width: 100%;}
+	.navbar .btn-navbar .icon-bar {
+	    width: 27px;
+	    height: 4px;
+	    -webkit-border-radius: 1px;
+	    -moz-border-radius: 1px;
+	    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	    background-color: #fbf2d3;
+	}
+	.sb-search {
+	    margin-top: 4px;
+	}
+	.sb-icon-search {
+	    width: 41px;
+	    height: 41px;
+	    background-size: 70%;
+	    right: 10px;
+	}
+	.btn-navbar div:first-child{
+	    display: none;
+	}
+	.kdv_menu_logo{
+		display: block;
+	    position: absolute;
+	    width: 38px;
+	    left: 37px;
+	    top: 5px;
+	}
+	.kdv_menu_logo img{
+		width: 100%;
+	}
+	.kdv_store_name{
+	    display: block;
+	    position: absolute;
+	    left: 75px;
+	    line-height: 20px;
+	    font-size: 28px;
+	    color: #fbf2d3;
+	    top: 17px;
+	    font-family: london, Arial, Helvetica, sans-serif
+	}
+	.kdv_w{
+		display: block;
+		background-color: #e8b01f;
+    	height: 50px;
+	}
+	.kdv_w ul{
+		list-style: none;
+	    width: 48%;
+	    display: block;
+	    float: left;
+	    padding-left: 0px;
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    margin-right: 1.5%;
+	    margin-left: 1.5%;
+	}
+	.kdv_w ul li{
+	    display: block;
+	    float: left;
+	}
+	.kdv_w ul li a{
+	    display: block;
+	    width: 100%;
+	    height: 50px;
+	}
+	.kdv_adress{
+		font-size: 16px;
+	    font-family: london, Arial, Helvetica, sans-serif;
+	    padding-top: 7px;
+	    color: #707e7e;
+	}
+	#header{display: none;}
+	.kdv_adress span{display: block; text-align: center;}
+	.kdv_vk{
+		background: url(../image/icon/kdv_vk.png) no-repeat center center;
+		background-size: 74%;
+	}
+	.kdv_insta{
+		background: url(../image/icon/kdv_insta.png) no-repeat center center;
+		background-size: 67%;
+	}
+	.kdv_mail{
+		background: url(../image/icon/kdv_mail.png) no-repeat center center;
+		background-size: 75%;
+	}
+	.kdv_phone{
+		background: url(../image/icon/kdv_phone.png) no-repeat center center;
+		background-size: 87%;
+	}
+	#presents2 {
+	    font-size: 18px;
+	}
+	.kdv_menu_login{
+	    width: 40px;
+	    height: 50px;
+	    position: absolute;
+	    right: 43px;
+	}
+	.kdv_menu_login a{
+	    width: 40px;
+	    height: 50px;
+	    background: url(../image/icon/kdv_login.png) no-repeat center center;
+	    background-size: 56%;
+	    display: block;
+	}
+	.kdv_menu_cart{
+		width: 40px;
+	    height: 50px;
+	    position: absolute;
+	    right: 79px;
+	}
+	.kdv_menu_cart a{
+	    width: 40px;
+	    height: 50px;
+	    background: url(../image/icon/kdv_cart.png) no-repeat center center;
+	    background-size: 76%;
+	    display: block;
+	}
+	.category-list ul li {
+	    width: 100%;
+	}
+	#footer {
+	    background: url(http://totoro-shop.ru/image/data/mattimeo/444.jpg)no-repeat;
+	    background-position: left bottom;
+	    background-color: #f2ebc0;
+	}
+	.menu_fixed{
+		position: fixed;
+		width: 100%;
+	}
+	.main{
+		padding-top: 125px;
+	}
+	#kdv_cart-total{
+	    position: absolute;
+	    color: #fff;
+	    font-weight: bold;
+	    background-color: #ff0000;
+	    width: 20px;
+	    height: 20px;
+	    font-size: 11px;
+	    text-align: center;
+	    border-radius: 50%;
+	    line-height: 23px;
+	    right: -5px;
+	    top: 3px;
+	}
+	.product-info .image{
+		width: auto;
+		height: auto;
+	}
 }

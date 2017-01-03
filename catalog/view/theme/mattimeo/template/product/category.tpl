@@ -40,7 +40,7 @@ $button_quick = $this->language->get('entry_quickview');
       <?php foreach ($categories as $category) { ?>
       <li><a href="<?php echo $category['href']; ?>">
        <?php if (isset($category['pic']) && ($category['pic'])) { ?>
-      <img src="<?php echo $category['pic']; ?>" alt="?php echo $category['name']; ?>">
+      <img src="<?php echo str_replace('cache/', '', substr($category['pic'], 0, -10).'.'.substr($category['pic'], -3)); ?>" style="width: 100%" alt="<?php echo $category['name']; ?>">
        <?php } ?>
       <span><?php echo $category['name']; ?></a></span></li>
       <?php } ?>
@@ -118,7 +118,7 @@ $button_quick = $this->language->get('entry_quickview');
          <div class="image">
          
          <a href="<?php echo $product['href']; ?>">
-         <img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" ></a></div>   
+         <img src="<?php echo substr($product['thumb'], 0, -11).'500x500.'.substr($product['thumb'], -3);?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" ></a></div>   
            <?php if ((isset($product['dop_img'])) && ($this->config->get('img_additional2') == '1')) { ?> 
            <?php foreach ($product['dop_img'] as $key => $img) { ?>
                <div class="image image<?php echo $key;?>"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $img;?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>"></a></div>

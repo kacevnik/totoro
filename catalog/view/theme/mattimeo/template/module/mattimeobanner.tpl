@@ -45,7 +45,7 @@
         <div class="one">
          <div>
          <div class="maska"></div>
-         <img src="<?php echo $tab['image']; ?>" 
+         <img style="width: 100%;" src="<?php echo substr($tab['image'], 0, -11).'500x500.'.substr($tab['image'], -3); ?>" 
          <?php if (isset($tab['headingtext'][$lang])){ ?>
          alt="<?php echo $tab['headingtext'][$lang]; ?>" 
          title="<?php echo $tab['headingtext'][$lang]; ?>"

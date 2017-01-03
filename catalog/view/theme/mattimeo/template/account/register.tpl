@@ -43,19 +43,11 @@
             <span class="error"><?php echo $error_telephone; ?></span>
             <?php } ?></td>
         </tr>
-        <tr>
-          <td><?php echo $entry_fax; ?></td>
-          <td><input type="text" name="fax" value="<?php echo $fax; ?>" /></td>
-        </tr>
       </table>
     </div>
     <h2><?php echo $text_your_address; ?></h2>
     <div class="content">
-      <table class="form">
-        <tr>
-          <td><?php echo $entry_company; ?></td>
-          <td><input type="text" name="company" value="<?php echo $company; ?>" /></td>
-        </tr>        
+      <table class="form">      
         <tr style="display: <?php echo (count($customer_groups) > 1 ? 'table-row' : 'none'); ?>;">
           <td><?php echo $entry_customer_group; ?></td>
           <td><?php foreach ($customer_groups as $customer_group) { ?>
@@ -70,31 +62,6 @@
             <?php } ?>
             <?php } ?></td>
         </tr>      
-        <tr id="company-id-display">
-          <td><span id="company-id-required" class="required">*</span> <?php echo $entry_company_id; ?></td>
-          <td><input type="text" name="company_id" value="<?php echo $company_id; ?>" />
-            <?php if ($error_company_id) { ?>
-            <span class="error"><?php echo $error_company_id; ?></span>
-            <?php } ?></td>
-        </tr>
-        <tr id="tax-id-display">
-          <td><span id="tax-id-required" class="required">*</span> <?php echo $entry_tax_id; ?></td>
-          <td><input type="text" name="tax_id" value="<?php echo $tax_id; ?>" />
-            <?php if ($error_tax_id) { ?>
-            <span class="error"><?php echo $error_tax_id; ?></span>
-            <?php } ?></td>
-        </tr>
-        <tr>
-          <td><span class="required">*</span> <?php echo $entry_address_1; ?></td>
-          <td><input type="text" name="address_1" value="<?php echo $address_1; ?>" />
-            <?php if ($error_address_1) { ?>
-            <span class="error"><?php echo $error_address_1; ?></span>
-            <?php } ?></td>
-        </tr>
-        <tr>
-          <td><?php echo $entry_address_2; ?></td>
-          <td><input type="text" name="address_2" value="<?php echo $address_2; ?>" /></td>
-        </tr>
         <tr>
           <td><span class="required">*</span> <?php echo $entry_city; ?></td>
           <td><input type="text" name="city" value="<?php echo $city; ?>" />
@@ -103,35 +70,30 @@
             <?php } ?></td>
         </tr>
         <tr>
-          <td><span id="postcode-required" class="required">*</span> <?php echo $entry_postcode; ?></td>
-          <td><input type="text" name="postcode" value="<?php echo $postcode; ?>" />
-            <?php if ($error_postcode) { ?>
-            <span class="error"><?php echo $error_postcode; ?></span>
+          <td><span class="required">*</span> <?php echo $entry_street; ?></td>
+          <td><input type="text" name="street" value="<?php echo $street; ?>" />
+            <?php if ($error_street) { ?>
+            <span class="error"><?php echo $error_street; ?></span>
             <?php } ?></td>
         </tr>
         <tr>
-          <td><span class="required">*</span> <?php echo $entry_country; ?></td>
-          <td><select name="country_id">
-              <option value=""><?php echo $text_select; ?></option>
-              <?php foreach ($countries as $country) { ?>
-              <?php if ($country['country_id'] == $country_id) { ?>
-              <option value="<?php echo $country['country_id']; ?>" selected="selected"><?php echo $country['name']; ?></option>
-              <?php } else { ?>
-              <option value="<?php echo $country['country_id']; ?>"><?php echo $country['name']; ?></option>
-              <?php } ?>
-              <?php } ?>
-            </select>
-            <?php if ($error_country) { ?>
-            <span class="error"><?php echo $error_country; ?></span>
+          <td><span class="required">*</span> <?php echo $entry_dom; ?></td>
+          <td><input type="text" name="dom" value="<?php echo $dom; ?>" />
+            <?php if ($error_dom) { ?>
+            <span class="error"><?php echo $error_dom; ?></span>
             <?php } ?></td>
         </tr>
         <tr>
-          <td><span class="required">*</span> <?php echo $entry_zone; ?></td>
-          <td><select name="zone_id">
-            </select>
-            <?php if ($error_zone) { ?>
-            <span class="error"><?php echo $error_zone; ?></span>
-            <?php } ?></td>
+          <td><?php echo $entry_pod; ?></td>
+          <td><input type="text" name="pod" value="<?php echo $pod; ?>" /></td>
+        </tr>
+        <tr>
+          <td><?php echo $entry_eta; ?></td>
+          <td><input type="text" name="eta" value="<?php echo $eta; ?>" /></td>
+        </tr>
+        <tr>
+          <td><?php echo $entry_kva; ?></td>
+          <td><input type="text" name="kva" value="<?php echo $kva; ?>" /></td>
         </tr>
       </table>
     </div>
@@ -173,7 +135,7 @@
         </tr>
       </table>
     </div>
-    <?php if ($text_agree) { ?>
+    <?php if (!$text_agree) { ?>
     <div class="buttons">
       <div class="right"><?php echo $text_agree; ?>
         <?php if ($agree) { ?>

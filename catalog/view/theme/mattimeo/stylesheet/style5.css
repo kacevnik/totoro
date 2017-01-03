@@ -390,4 +390,7 @@ a.readmore:hover{ background-color: #e67879;}
 .matban_box .threeheading{color:#c3a79b;}
 .matban_box.static.maska_text .two > div > div{color:#fff;}		
 
-.quickviewbutton a{}	 	
+.quickviewbutton a{}	
+
+.yap{margin-bottom: 20px;} 	
+.yap ymaps{margin: 0 auto;} 	

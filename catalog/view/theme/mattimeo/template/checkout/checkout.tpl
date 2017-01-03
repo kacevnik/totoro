@@ -650,8 +650,14 @@ $('#button-guest').live('click', function() {
 				}	
 				
 				if (json['error']['city']) {
-					$('#payment-address input[name=\'city\'] + br').after('<span class="error">' + json['error']['city'] + '</span>');
-				}	
+					$('#payment-address select[name=\'city\'] + br').after('<span class="error">' + json['error']['city'] + '</span>');
+				}
+				if (json['error']['street']) {
+					$('#payment-address input[name=\'street\'] + br').after('<span class="error">' + json['error']['street'] + '</span>');
+				}
+				if (json['error']['dom']) {
+					$('#payment-address input[name=\'dom\'] + br').after('<span class="error">' + json['error']['dom'] + '</span>');
+				}		
 				
 				if (json['error']['postcode']) {
 					$('#payment-address input[name=\'postcode\'] + br').after('<span class="error">' + json['error']['postcode'] + '</span>');
@@ -664,6 +670,7 @@ $('#button-guest').live('click', function() {
 				if (json['error']['zone']) {
 					$('#payment-address select[name=\'zone_id\'] + br').after('<span class="error">' + json['error']['zone'] + '</span>');
 				}
+				console.log(json['error']);
 			} else {
 				<?php if ($shipping_required) { ?>	
 				var shipping_address = $('#payment-address input[name=\'shipping_address\']:checked').attr('value');

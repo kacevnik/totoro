@@ -199,8 +199,7 @@ VK.Widgets.Group("vk_groups", {mode: <?php echo $vk_mode; ?>, width: "300", heig
 
 <?php if ($this->config->get('quick_view') == '1') { ?>  
 <script type="text/javascript" src="catalog/view/javascript/quickview/quickview.js"></script>		
-<link  rel="stylesheet"  property='stylesheet' media='screen' type="text/css" href="catalog/view/javascript/fancybox/jquery.fancybox.css" />
-<script type="text/javascript" src="catalog/view/javascript/fancybox/jquery.fancybox.pack.js"></script>
+
  <?php } ?>
 
  <script type="text/javascript">
@@ -208,7 +207,6 @@ $(document).ready(function() {
 	$('.select1').customStyle1();
   });
  </script>
- 
  
  <!-- Yandex.Metrika counter -->
 <script type="text/javascript">

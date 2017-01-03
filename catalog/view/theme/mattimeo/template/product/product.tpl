@@ -15,7 +15,7 @@
      <?php if ($thumb) { ?>
       <div class="image"> 
        <a title="<?php echo $heading_title; ?>"  <?php if ($this->config->get('product_zoom') !== '1') { ?> href="<?php echo $popup; ?>" class="colorbox" <?php } ?>>
-       <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>"
+       <img src="<?php echo substr($thumb, 0, -11).'500x500.'.substr($thumb, -3);?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>"
         <?php if ($this->config->get('product_zoom') == '1') { ?>  id="main-image" data-zoom-image="<?php echo $popup; ?>"  <?php } ?> >
         
        </a></div>
@@ -118,7 +118,8 @@
         <?php if ($reward) { ?>
         <span><?php echo $text_reward; ?></span> <?php echo $reward; ?><br />
         <?php } ?>
-        <span><?php echo $text_stock; ?></span> <?php echo $stock; ?></div>
+        <span><?php echo $text_stock; ?></span> <?php echo $stock; ?>
+        </div>
         
         
        
@@ -285,7 +286,7 @@
       </div>
       <?php } ?>
       
-      
+      <?php if($stock != 'Нет в наличии'){ ?>
        <div class="cart">
         
          <table class="gty"><tr><td>
@@ -307,7 +308,7 @@
         <div class="minimum"><?php echo $text_minimum; ?></div>
         <?php } ?>
       </div>
-     
+     <?php } ?>
 		
 		<?php if ($benefits) { ?>
 		<div class="benefits">
@@ -804,6 +805,17 @@ $('#button-cart').bind('click', function() {
 				$('.success').fadeIn('slow');
 					
 				$('#cart-total').html(json['total']);
+
+        if(json['total'].split(' ')[1] != 0){
+          if($('span').is('#kdv_cart-total')){$('#kdv_cart-total').remove();}
+          $('.kdv_menu_cart a').append('<span id="kdv_cart-total"></span>');
+          if($(window).width() < 401){
+            $('#kdv_cart-total').fadeIn('slow');
+          }
+          $('#kdv_cart-total').text(json['total'].split(' ')[1]);
+        }else{
+          $('#kdv_cart-total').remove();
+        }
 				
 				<!--$('html, body').animate({ scrollTop: 0 }, 'slow');--> 
 			}	

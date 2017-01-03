@@ -36,6 +36,7 @@
 <?php } ?>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/mattimeo/stylesheet/stylesheet.css" />
 <link rel="stylesheet" href="catalog/view/javascript/FontAwesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="catalog/view/theme/mattimeo/js/source/jquery.fancybox.css">
 <!--Color scheme 
 *******************************************-->
 <?php if (($this->config->get('colorsite') !='0' && $this->config->get('colorsite') !='' && $this->config->get('colorsite') !='none')) { ?>
@@ -49,6 +50,7 @@
 <?php } ?>
 <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/mattimeo/js/source/jquery.fancybox.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
 
 <?php foreach ($scripts as $script) { ?>
@@ -206,8 +208,9 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
  
      <?php echo $currency; ?>
   
-
+     <div class="kdv_top_text">Самый большой выбор Тоторо в Москве!</div>
    <div class="navButton menuResp links">
+
   <!--Link Home-->
   <?php if ($this->config->get('top_m_home') == '1') { ?>
  <div> <a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></div>
@@ -306,16 +309,35 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
   <?php
   if ($firstname) echo '<div id="arein">'.$firstname.' '.$lastname.' <a href="/index.php?route=account/logout">[выйти]</a></div>';
 ?>
+
     </div>
   <!--end Contact info--> 
- 
- 
+<?php if(!$firstname){ ?>
+ <div class="head_login">
+      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+        <div class="content">
+          <b>Вход в личный кабинет</b><br />
+          <input type="email" name="email" value="<?php echo $email; ?>" placeholder="Email *" required style="margin-bottom: 4px; width: 234px"/>
+          <br />
+          <input type="password" name="password" value="<?php echo $password; ?>" placeholder="Пароль *" required style="margin-bottom: 4px; width: 234px"/>
+          <br />
+          <a href="http://totoro-shop.ru/index.php?route=account/register">Регистрация</a>
+          <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a>
+          <input type="submit" value="<?php echo $button_login; ?>" class="button" />
+          <?php if ($redirect) { ?>
+          <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
+          <?php } ?>
+        </div>
+      </form>
+    </div>
+    <?php } ?>
   </div>
  <div class="cont_bottom"></div> 
 </div>
 
 
 <!--Menu-->
+<div class="menu_fixed">
 <div class="ma-nav-mobile-container hidden-desktop default 
 <?php if ($this->config->get('menu_width') !== '1') { ?>containermenu <?php }?>
 <?php if ($this->config->get('gen_topmenu') == '1') { ?>displaymenu<?php }?>">
@@ -330,13 +352,24 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 							<span class="sb-icon-search"></span>
 						
 					</div>
+
 <!--end search-->
 <?php }?>                                 
                             
                             
                                 <div id="navbar-inner" class="navbar-inner navbar-inactive">
-                                 
-                                    <a class="btn btn-navbar"><div><?php echo $text_menu; ?></div>
+                                    <a class="kdv_menu_logo" href="<?php echo $home; ?>">
+                                      <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                                    </a>
+                                    <div class="kdv_store_name">TOTORO SHOP</div>
+                                    <div class="kdv_menu_login">
+                                      <a href="http://totoro-shop.ru/index.php?route=account/login"></a>
+                                    </div>
+                                    <div class="kdv_menu_cart">
+                                      <a href="http://totoro-shop.ru/index.php?route=checkout/cart">
+                                      </a>
+                                    </div>
+                                    <a class="btn btn-navbar">
                                         <span class="icon-bar">  </span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
@@ -471,9 +504,21 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 </div>
 
 </div>
+<div class="kdv_w">
+<ul>
+  <li style="width: 22%;"><a href="https://vk.com/totoroshopp" target="_blank" class="kdv_vk"></a></li>
+  <li style="width: 23%;"><a href="https://www.instagram.com/totoro_shop_/" class="kdv_insta" target="_blank"></a></li>
+  <li style="width: 25%;"><a href="http://totoro-shop.ru/index.php?route=information/contact" class="kdv_mail"></a></li>
+  <li style="width: 30%;"><a href="tel:+79261970800" class="kdv_phone"></a></li>
+</ul>
+  <div class="kdv_adress">
+    <span>Москва, ул. Маросейка, 8</span> 
+    <span>10.00-22.00 Без выходных</span> 
+  </div>
 </div>
 </div>
-
+</div>
+</div>
 <!--end menu-->
 
 

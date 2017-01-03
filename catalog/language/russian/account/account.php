@@ -18,4 +18,10 @@ $_['text_return']        = 'Запросы на возврат';
 $_['text_transaction']   = 'История фин. операций';
 $_['text_newsletter']    = 'Подписаться или отказаться от подписки на рассылку новостей';
 $_['text_recurring']     = 'Регулярные платежи';
+
+$_['entry_firstname']     = 'Имя, Отчество:';
+$_['entry_lastname']      = 'Фамилия:';
+$_['entry_email']      = 'E-Mail:';
+$_['entry_telephone']     = 'Телефон:';
+$_['entry_fax']           = 'Факс:';
 ?>

@@ -65,6 +65,8 @@ class ControllerAccountRegister extends Controller {
 		$this->data['entry_city'] = $this->language->get('entry_city');
 		$this->data['entry_street'] = $this->language->get('entry_street');
 		$this->data['entry_dom'] = $this->language->get('entry_dom');
+		$this->data['entry_pod'] = $this->language->get('entry_pod');
+		$this->data['entry_eta'] = $this->language->get('entry_eta');
 		$this->data['entry_kva'] = $this->language->get('entry_kva');
 		$this->data['entry_country'] = $this->language->get('entry_country');
 		$this->data['entry_zone'] = $this->language->get('entry_zone');
@@ -283,14 +285,28 @@ class ControllerAccountRegister extends Controller {
 
 		if (isset($this->request->post['dom'])) {
 			$this->data['dom'] = $this->request->post['dom'];
-			$this->data['address_1']=$this->data['address_1'].' д. '.$this->request->post['dom'];
+			$this->data['address_1']=$this->data['address_1'].' ,дом. '.$this->request->post['dom'];
 		} else {
 			$this->data['dom'] = '';
 		}
 
+		if (isset($this->request->post['pod'])) {
+			$this->data['pod'] = $this->request->post['pod'];
+			$this->data['address_1']=$this->data['address_1'].' ,подьезд. '.$this->request->post['pod'];
+		} else {
+			$this->data['pod'] = '';
+		}
+
+		if (isset($this->request->post['eta'])) {
+			$this->data['eta'] = $this->request->post['eta'];
+			$this->data['address_1']=$this->data['address_1'].' ,этаж. '.$this->request->post['eta'];
+		} else {
+			$this->data['eta'] = '';
+		}
+
 		if (isset($this->request->post['kva'])) {
 			$this->data['kva'] = $this->request->post['kva'];
-			$this->data['address_1']=$this->data['address_1'].' кв. '.$this->request->post['kva'];
+			$this->data['address_1']=$this->data['address_1'].' ,кв. '.$this->request->post['kva'];
 		} else {
 			$this->data['kva'] = '';
 		}

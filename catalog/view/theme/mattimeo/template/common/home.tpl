@@ -97,7 +97,7 @@ min-height: 450px;
 }
 </style>
 <div id="instagramModule">
-	<h4 class="istagramHeader"><a href="https://instagram.com/madeinchinashop/">Мы в Instagram</a></h4>
+	<h4 class="istagramHeader"><a href="https://www.instagram.com/totoro_shop_/">Мы в Instagram</a></h4>
 	<?php
 
 $user_id="1398495560";

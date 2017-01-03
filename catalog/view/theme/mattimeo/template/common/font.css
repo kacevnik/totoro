@@ -1,0 +1,15 @@
+/* cyrillic */
+@font-face {
+  font-family: 'Segoe';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Segoe'), local('Segoe'), url(/system/fonts/segoe.ttf) format('ttf');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+font-face {
+  font-family: 'london';
+  font-style: normal;
+  font-weight: 400;
+  src: local('london'), local('london'), url(/system/fonts/london.ttf) format('ttf');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}

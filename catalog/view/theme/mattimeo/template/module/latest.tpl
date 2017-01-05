@@ -1,4 +1,5 @@
 <div class="box">
+
 <?php
 $this->language->load('module/category');
 $button_compare = $this->language->get('button_compare');
@@ -82,7 +83,9 @@ $button_quick = $this->language->get('entry_quickview');
                </div>
                <?php } ?>
               
-              <div class="cart"><input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" /></div>
+              <div class="cart">
+                <a href="<?php echo $product['href']; ?>" class="button">КУПИТЬ</a> 
+              </div>
               
          <div class="rating">
           <?php for ($i = 1; $i <= 5; $i++) { ?>

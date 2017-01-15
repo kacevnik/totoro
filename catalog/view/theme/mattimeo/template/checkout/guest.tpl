@@ -1,5 +1,5 @@
 <div class="left">
-  <h2><?php echo $text_your_details; ?></h2>
+  <br />
   <span class="required">*</span> <?php echo $entry_firstname; ?><br />
   <input type="text" name="firstname" value="<?php echo $firstname; ?>" class="large-field" />
   <br />
@@ -7,6 +7,8 @@
   <span class="required">*</span> <?php echo $entry_lastname; ?><br />
   <input type="text" name="lastname" value="<?php echo $lastname; ?>" class="large-field" />
   <br />
+</div>
+<div class="right">
   <br />
   <span class="required">*</span> <?php echo $entry_email; ?><br />
   <input type="text" name="email" value="<?php echo $email; ?>" class="large-field" />
@@ -15,43 +17,13 @@
   <span class="required">*</span> <?php echo $entry_telephone; ?><br />
   <input type="text" name="telephone" value="<?php echo $telephone; ?>" class="large-field" />
   <br />
-  <br />
-</div>
-<div class="right">
-  <h2><?php echo $text_your_address; ?></h2>
-
-  <span class="required">*</span> <?php echo $entry_city; ?><br />
-  <select name="city" class="large-field">
-  		<option checked="checked" value="0">Выбрать город</option>
-  		<option value="1">Москва</option>
-  </select>
-  <br>
-  <br>
-  <span class="required">*</span> Улица<br />
-  <input type="text" name="street" value="" class="large-field" />
-   <br>
-  <br>
-  <span class="required">*</span> Дом<br />
-  <input type="text" name="dom" value="" class="large-field" />
-   <br>
-  <br>
-   Подъезд<br />
-  <input type="text" name="pod" value="" class="large-field" />
-  <br>
-  <br>
-  Этаж<br />
-  <input type="text" name="eta" value="" class="large-field" />
-  <br>
-  <br>
-    Квартира<br />
-  <input type="text" name="kva" value="" class="large-field" />
 </div>
 <?php if ($shipping_required) { ?>
 <div style="clear: both; padding-top: 15px; border-top: 1px solid #DDDDDD;" class="shipping_address">
   <?php if ($shipping_address) { ?>
   <input type="checkbox" name="shipping_address" value="1" id="shipping" checked="checked" />
   <?php } else { ?>
-  <input type="checkbox" name="shipping_address" value="1" id="shipping" />
+  <input type="checkbox" name="shipping_address" value="1" id="shipping" checked="checked"/>
   <?php } ?>
   <label for="shipping"><?php echo $entry_shipping; ?></label>
   <br />

@@ -47,15 +47,7 @@ $('#checkout .checkout-content input[name=\'account\']').live('change', function
 	if ($(this).attr('value') == 'register') {
 		$('#payment-address .checkout-heading span').html('<?php echo $text_checkout_account; ?>');
 	} else {
-		$('#payment-address .checkout-heading span').html('Шаг 2: Контактные данные');
-	}
-});
-
-$('#shipping-method input[type=\'radio\']').live('change', function() {
-	if ($('#shipping-method input[id=\'pickup.pickup\']').attr('checked') == 'checked') {
-		$('#kdv_adress').slideUp('slow');
-	} else {
-		$('#kdv_adress').slideDown('slow');
+		$('#payment-address .checkout-heading span').html('<?php echo $text_checkout_payment_address; ?>');
 	}
 });
 
@@ -601,10 +593,13 @@ $('#button-shipping-address').live('click', function() {
 		}
 	});	
 });
-
+$('input[name=\'shipping_dostavka\']').toggle(function(){
+	$(this).attr('data')=1;
+},function(){
+	$(this).attr('data')=0;
+});
 // Guest
 $('#button-guest').live('click', function() {
-	
 	$.ajax({
 		url: 'index.php?route=checkout/guest/validate',
 		type: 'post',
@@ -623,7 +618,7 @@ $('#button-guest').live('click', function() {
 			
 			if (json['redirect']) {
 				location = json['redirect'];
-			} else if (json['error']) {
+			} else if (json['error'] && $('input[name=\'shipping_dostavka\']').attr('data')!='1') {
 				if (json['error']['warning']) {
 					$('#payment-address .checkout-content').prepend('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					
@@ -657,10 +652,33 @@ $('#button-guest').live('click', function() {
 				if (json['error']['address_1']) {
 					$('#payment-address input[name=\'address_1\'] + br').after('<span class="error">' + json['error']['address_1'] + '</span>');
 				}	
+				
+				if (json['error']['city']) {
+					$('#payment-address select[name=\'city\'] + br').after('<span class="error">' + json['error']['city'] + '</span>');
+				}
+				if (json['error']['street']) {
+					$('#payment-address input[name=\'street\'] + br').after('<span class="error">' + json['error']['street'] + '</span>');
+				}
+				if (json['error']['dom']) {
+					$('#payment-address input[name=\'dom\'] + br').after('<span class="error">' + json['error']['dom'] + '</span>');
+				}		
+				
+				if (json['error']['postcode']) {
+					$('#payment-address input[name=\'postcode\'] + br').after('<span class="error">' + json['error']['postcode'] + '</span>');
+				}	
+				
+				if (json['error']['country']) {
+					$('#payment-address select[name=\'country_id\'] + br').after('<span class="error">' + json['error']['country'] + '</span>');
+				}	
+				
+				if (json['error']['zone']) {
+					$('#payment-address select[name=\'zone_id\'] + br').after('<span class="error">' + json['error']['zone'] + '</span>');
+				}
+				console.log(json['error']);
 			} else {
 				<?php if ($shipping_required) { ?>	
-
 				var shipping_address = $('#payment-address input[name=\'shipping_address\']:checked').attr('value');
+				
 				if (shipping_address) {
 					$.ajax({
 						url: 'index.php?route=checkout/shipping_method',
@@ -834,7 +852,7 @@ $('#button-shipping-method').live('click', function() {
 	$.ajax({
 		url: 'index.php?route=checkout/shipping_method/validate',
 		type: 'post',
-		data: $('#shipping-method input[type=\'radio\']:checked, #shipping-method textarea, #shipping-method input[type=\'text\'], #shipping-method select'),
+		data: $('#shipping-method input[type=\'radio\']:checked, #shipping-method textarea'),
 		dataType: 'json',
 		beforeSend: function() {
 			$('#button-shipping-method').attr('disabled', true);
@@ -850,18 +868,6 @@ $('#button-shipping-method').live('click', function() {
 			if (json['redirect']) {
 				location = json['redirect'];
 			} else if (json['error']) {
-				if (json['error']['city']) {
-					$('#shipping-method select[name=\'city\'] + br').after('<span class="error">' + json['error']['city'] + '</span>');
-				}
-
-				if (json['error']['street']) {
-					$('#shipping-method input[name=\'street\'] + br').after('<span class="error">' + json['error']['street'] + '</span>');
-				}
-
-				if (json['error']['dom']) {
-					$('#shipping-method input[name=\'dom\'] + br').after('<span class="error">' + json['error']['dom'] + '</span>');
-				}
-
 				if (json['error']['warning']) {
 					$('#shipping-method .checkout-content').prepend('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					

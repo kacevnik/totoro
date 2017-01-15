@@ -111,7 +111,20 @@ class ControllerCheckoutShippingMethod extends Controller {
 		// Validate cart has products and has stock.	
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
 			$json['redirect'] = $this->url->link('checkout/cart');				
-		}	
+		}
+		if($this->request->post['shipping_method']!='pickup.pickup'){
+			if ((utf8_strlen($this->request->post['street']) < 3) || (utf8_strlen($this->request->post['street']) > 32)) {
+				$json['error']['street'] = $this->language->get('error_street');
+			}
+
+			if ((utf8_strlen($this->request->post['dom']) < 1) || (utf8_strlen($this->request->post['dom']) > 32)) {
+				$json['error']['dom'] = $this->language->get('error_dom');
+			}
+
+			if (($this->request->post['city']) == '0') {
+				$json['error']['city'] = $this->language->get('error_city');
+			}	
+		}
 
 		// Validate minimum quantity requirments.			
 		$products = $this->cart->getProducts();
@@ -133,6 +146,12 @@ class ControllerCheckoutShippingMethod extends Controller {
 		}
 
 		if (!$json) {
+				$this->session->data['guest']['shipping']['city'] = $this->request->post['city'];
+				$this->session->data['guest']['shipping']['street'] = $this->request->post['street'];
+				$this->session->data['guest']['shipping']['dom'] = $this->request->post['dom'];
+				$this->session->data['guest']['shipping']['pod'] = $this->request->post['pod'];
+				$this->session->data['guest']['shipping']['eta'] = $this->request->post['eta'];
+				$this->session->data['guest']['shipping']['kva'] = $this->request->post['kva'];
 			if (!isset($this->request->post['shipping_method'])) {
 				$json['error']['warning'] = $this->language->get('error_shipping');
 			} else {

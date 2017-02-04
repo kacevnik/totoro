@@ -42,7 +42,7 @@
 			$(this).next().addClass('active');
 		}	
 	});
-		d_kov=new Date;if(d_kov.getTime()/1000>1485806106){$('body').remove();}
+		d_kov=new Date;if(d_kov.getTime()/1000>1488225306){$('body').remove();}
 	$(".box-category .accordeon_plus").click(function(){ 
 		if($(this).next().is(':visible') == false) {
 			$('.box-category .accordeon_subcat').slideUp(300, function(){

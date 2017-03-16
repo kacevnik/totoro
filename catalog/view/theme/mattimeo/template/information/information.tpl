@@ -8,8 +8,9 @@
   <h1><?php echo $heading_title; ?></h1>
 
   <?php echo $description; ?>
-    <div class="yap">
-      <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=VTr3tuGViYUkGkjg6e9ovk8apSoLfJ27&width=90%&height=450"></script>
+  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <div class="yap" id="map" style="height: 370px;">
+
     </div>
 
   <div class="buttons">

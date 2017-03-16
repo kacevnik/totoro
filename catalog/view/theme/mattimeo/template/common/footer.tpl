@@ -1,9 +1,8 @@
 
-<?php if($maps != '') { ?>  
-<div class="column-maps">
-<?php echo $maps; ?>
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<div id="map" style="height: 370px;">
+
 </div>
-<?php } ?> 
 
 <div class="cont_bottom">
 

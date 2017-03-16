@@ -21,10 +21,29 @@
 		$('#kdv_cart-total').remove();
 	}
 
+	ymaps.ready(init);
+	 
+	function init(){     
+	 
+	    var myMap;
+	 
+	    myMap = new ymaps.Map("map", {
+	        center: [55.757592, 37.636486],
+	        zoom: 17
+	    });
+
+	 	var myPlacemark = new ymaps.Placemark([55.757592, 37.636486] , {}, {
+	 		preset: 'islands#icon',
+            iconColor: '#0BA0A0'
+        });     
+	 
+	    myMap.geoObjects.add(myPlacemark);
+	}
+
+
 	if($(window).width() < 401){
 		$('#footer').css({'background':'url(http://totoro-shop.ru/image/data/mattimeo/444.jpg)no-repeat center bottom','background-color':'#f2ebc0','background-size':'95%'});
 		$('#instagramModule').hide();
-		$('#ymaps1489671321282162907 canvas').css({'left': '-353px'});
 	}
 //Top menu	
 	 $('div.topmenu_theme').removeAttr('style');

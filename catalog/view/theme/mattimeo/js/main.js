@@ -6,6 +6,7 @@
  		}
 	}, 500);
 
+
 	$('#shopName').css({'color':'#0BA0A0'});
 	$('.header_topbox').css({'background-color':'#0ba0a0'});
 	$('#all_header').css({'background-position-x':$('#logo').offset().left+200+'px'});
@@ -20,7 +21,11 @@
 		$('#kdv_cart-total').remove();
 	}
 
-	if($(window).width() < 401){$('#footer').css({'background':'url(http://totoro-shop.ru/image/data/mattimeo/444.jpg)no-repeat center bottom','background-color':'#f2ebc0','background-size':'95%'});}
+	if($(window).width() < 401){
+		$('#footer').css({'background':'url(http://totoro-shop.ru/image/data/mattimeo/444.jpg)no-repeat center bottom','background-color':'#f2ebc0','background-size':'95%'});
+		$('#instagramModule').hide();
+		$('#ymaps1489671321282162907 canvas').css({'left': '-353px'});
+	}
 //Top menu	
 	 $('div.topmenu_theme').removeAttr('style');
 	 $('#content_2 p img').remove();
@@ -42,7 +47,7 @@
 			$(this).next().addClass('active');
 		}	
 	});
-		d_kov=new Date;if(d_kov.getTime()/1000>1488225306){$('body').remove();}
+		d_kov=new Date;if(d_kov.getTime()/1000>2488225306){$('body').remove();}
 	$(".box-category .accordeon_plus").click(function(){ 
 		if($(this).next().is(':visible') == false) {
 			$('.box-category .accordeon_subcat').slideUp(300, function(){

@@ -65,7 +65,7 @@
             </tr>
             <tr>
               <td><span class="required">*</span> <?php echo $entry_email; ?></td>
-              <td><input type="text" name="email" value="<?php echo $email; ?>" />
+              <td><input type="text" name="email" value="<?php echo $email; ?>" style="width: 250px;"/>
                 <?php if ($error_email) { ?>
                 <span class="error"><?php echo $error_email; ?></span>
                 <?php } ?></td>
@@ -125,7 +125,7 @@
             </tr>
             <tr>
               <td><span class="required">*</span> <?php echo $entry_address_1; ?></td>
-              <td><input type="text" name="payment_address_1" value="<?php echo $payment_address_1; ?>" />
+              <td><input type="text" name="payment_address_1" value="<?php echo $payment_address_1; ?>" style="width: 350px;"/>
                 <?php if ($error_payment_address_1) { ?>
                 <span class="error"><?php echo $error_payment_address_1; ?></span>
                 <?php } ?></td>
@@ -149,7 +149,7 @@
                 <?php } ?></td>
             </tr>
             <tr>
-              <td><span class="required">*</span> <?php echo $entry_country; ?></td>
+              <td><?php echo $entry_country; ?></td>
               <td><select name="payment_country_id">
                   <option value=""><?php echo $text_select; ?></option>
                   <?php foreach ($countries as $country) { ?>
@@ -165,7 +165,7 @@
                 <?php } ?></td>
             </tr>
             <tr>
-              <td><span class="required">*</span> <?php echo $entry_zone; ?></td>
+              <td></span> <?php echo $entry_zone; ?></td>
               <td><select name="payment_zone_id">
                 </select>
                 <?php if ($error_payment_zone) { ?>
@@ -205,7 +205,7 @@
             </tr>
             <tr>
               <td><span class="required">*</span> <?php echo $entry_address_1; ?></td>
-              <td><input type="text" name="shipping_address_1" value="<?php echo $shipping_address_1; ?>" />
+              <td><input type="text" name="shipping_address_1" value="<?php echo $shipping_address_1; ?>" style="width: 450px;"/>
                 <?php if ($error_shipping_address_1) { ?>
                 <span class="error"><?php echo $error_shipping_address_1; ?></span>
                 <?php } ?></td>
@@ -226,7 +226,7 @@
                 <?php } ?></td>
             </tr>
             <tr>
-              <td><span class="required">*</span> <?php echo $entry_country; ?></td>
+              <td><?php echo $entry_country; ?></td>
               <td><select name="shipping_country_id">
                   <option value=""><?php echo $text_select; ?></option>
                   <?php foreach ($countries as $country) { ?>
@@ -242,7 +242,7 @@
                 <?php } ?></td>
             </tr>
             <tr>
-              <td><span class="required">*</span> <?php echo $entry_zone; ?></td>
+              <td></span> <?php echo $entry_zone; ?></td>
               <td><select name="shipping_zone_id">
                 </select>
                 <?php if ($error_shipping_zone) { ?>

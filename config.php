@@ -21,7 +21,7 @@ define('DIR_LOGS', '/home/totoro-sho/totoro-shop.ru/docs/system/logs/');
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'totoro-sho.mysql');
 define('DB_USERNAME', 'totoro-sho_mysql');
-define('DB_PASSWORD', '6AeqzUF-');
+define('DB_PASSWORD', 'q8Uc:nNj');
 define('DB_DATABASE', 'totoro-sho_db');
 define('DB_PREFIX', '');
 ?>

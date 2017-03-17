@@ -341,8 +341,7 @@ class ModelCatalogProduct extends Model {
 			} elseif ($data['sort'] == 'p.price') {
 				$sql .= " ORDER BY (CASE WHEN special IS NOT NULL THEN special WHEN discount IS NOT NULL THEN discount ELSE p.price END)";
 			} else {
-				$sql .= " ORDER BY p.quantity";
-				$order = 1;
+				$sql .= " ORDER BY " . $data['sort'];
 			}
 		} else {
 			$sql .= " ORDER BY p.sort_order";	
@@ -351,11 +350,7 @@ class ModelCatalogProduct extends Model {
 		if (isset($data['order']) && ($data['order'] == 'DESC')) {
 			$sql .= " DESC, LCASE(pd.name) DESC";
 		} else {
-			if(!$order){
-				$sql .= " ASC, LCASE(pd.name) ASC";
-			}else{
-				$sql .= " DESC, LCASE(pd.name) DESC";
-			}
+			$sql .= " ASC, LCASE(pd.name) ASC";
 		}
 
 		if (isset($data['start']) || isset($data['limit'])) {

@@ -39,7 +39,10 @@
 	 
 	    myMap.geoObjects.add(myPlacemark);
 	}
-
+	if($(window).width() > 401){
+		$('#search input').show();
+		$('#search .sb-icon-search,#search .sb-search-submit').css({'background-size':'contain','height':'24px','width':'24px','top':'5px','right':'5px'});
+	}
 
 	if($(window).width() < 401){
 		$('#footer').css({'background':'url(http://totoro-shop.ru/image/data/mattimeo/444.jpg)no-repeat center bottom','background-color':'#f2ebc0','background-size':'95%'});

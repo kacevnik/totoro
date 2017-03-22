@@ -6,6 +6,8 @@
  		}
 	}, 500);
 
+	$('#ma-mobilemenu').css({'max-height':$(window).height(), 'overflow-y': 'scroll'});
+
 
 	$('#shopName').css({'color':'#0BA0A0'});
 	$('.header_topbox').css({'background-color':'#0ba0a0'});

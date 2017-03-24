@@ -366,7 +366,8 @@ class ModelCatalogProduct extends Model {
 		}
 
 		$product_data = array();
-	
+		$query = $this->db->query("UPDATE " . DB_PREFIX . "product SET order_type='1' WHERE order_type != '1' AND quantity <= 0");
+		$query = $this->db->query("UPDATE " . DB_PREFIX . "product SET order_type='0' WHERE order_type != '0' AND quantity > 0");
 		$query = $this->db->query($sql);
 
 		foreach ($query->rows as $result) {

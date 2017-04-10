@@ -5,8 +5,10 @@
   			clearInterval(timerId);
  		}
 	}, 500);
-
-	$('#ma-mobilemenu').css({'max-height':$(window).height(), 'overflow-y': 'scroll'});
+	
+ 	if($(window).width() < 401){
+		$('#ma-mobilemenu').css({'max-height':$(window).height(), 'overflow-y': 'scroll'});
+	}
 
 
 	$('#shopName').css({'color':'#0BA0A0'});

@@ -1,5 +1,8 @@
 
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<div id="map" style="height: 370px;">
 
+</div>
 
 <div class="cont_bottom">
 

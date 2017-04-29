@@ -101,7 +101,7 @@ min-height: 450px;
 	<?php
 
 $user_id="1398495560";
-$access_token = "1398495560.1677ed0.469e1449538c45caae46bb0c9f409c9c";
+$access_token = "1398495560.34f77e6.7ec19b0bd0be440986ad9560be0a5e0f";
 
 $url = "https://api.instagram.com/v1/users/".$user_id."/media/recent?access_token=".$access_token;
 		

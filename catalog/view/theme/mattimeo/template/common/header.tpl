@@ -460,7 +460,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
          
          <?php if ($this->config->get('gen_m_last') == '1') { ?>
          <!--Link Latest--> 
-	<li><a href="<?php echo $latest; ?>"><?php echo $text_latest; ?></a></li>
+	
     <!--Lend Latest--> 
 	<?php } ?>
          

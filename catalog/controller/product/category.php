@@ -342,6 +342,7 @@ class ControllerProductCategory extends Controller {
 					'special'     => $special,
 					'tax'         => $tax,
 					'rating'      => $result['rating'],
+					'count'       => $result['quantity'],
 					'sticker'     => $stickers,
 					'benefits'    => $benefits,
 					'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),

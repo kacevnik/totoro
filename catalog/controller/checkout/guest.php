@@ -111,10 +111,7 @@ class ControllerCheckoutGuest extends Controller {
 			$this->data['city'] = '';
 		}
 
-
-
-
-
+		
 		$this->data['shipping_required'] = $this->cart->hasShipping();
 
 		if (isset($this->session->data['guest']['shipping_address'])) {
@@ -167,12 +164,6 @@ class ControllerCheckoutGuest extends Controller {
 
 			if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
 				$json['error']['telephone'] = $this->language->get('error_telephone');
-			}
-			if ((utf8_strlen($this->request->post['street']) < 3) || (utf8_strlen($this->request->post['street']) > 32)) {
-				$json['error']['street'] = $this->language->get('error_street');
-			}
-			if ((utf8_strlen($this->request->post['dom']) < 1) || (utf8_strlen($this->request->post['dom']) > 32)) {
-				$json['error']['dom'] = $this->language->get('error_dom');
 			}
 
 			if (($this->request->post['city']) == '0') {

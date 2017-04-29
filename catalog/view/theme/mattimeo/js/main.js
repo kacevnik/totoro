@@ -5,6 +5,11 @@
   			clearInterval(timerId);
  		}
 	}, 500);
+	
+ 	if($(window).width() < 401){
+		$('#ma-mobilemenu').css({'max-height':$(window).height(), 'overflow-y': 'scroll'});
+	}
+
 
 	$('#shopName').css({'color':'#0BA0A0'});
 	$('.header_topbox').css({'background-color':'#0ba0a0'});
@@ -20,7 +25,33 @@
 		$('#kdv_cart-total').remove();
 	}
 
-	if($(window).width() < 401){$('#footer').css({'background':'url(http://totoro-shop.ru/image/data/mattimeo/444.jpg)no-repeat center bottom','background-color':'#f2ebc0','background-size':'95%'});}
+	ymaps.ready(init);
+	 
+	function init(){     
+	 
+	    var myMap;
+	 
+	    myMap = new ymaps.Map("map", {
+	        center: [55.757592, 37.636486],
+	        zoom: 17
+	    });
+
+	 	var myPlacemark = new ymaps.Placemark([55.757592, 37.636486] , {}, {
+	 		preset: 'islands#icon',
+            iconColor: '#0BA0A0'
+        });     
+	 
+	    myMap.geoObjects.add(myPlacemark);
+	}
+	if($(window).width() > 401){
+		$('#search input').show();
+		$('#search .sb-icon-search,#search .sb-search-submit').css({'background-size':'contain','height':'24px','width':'24px','top':'5px','right':'5px'});
+	}
+
+	if($(window).width() < 401){
+		$('#footer').css({'background':'url(http://totoro-shop.ru/image/data/mattimeo/444.jpg)no-repeat center bottom','background-color':'#f2ebc0','background-size':'95%'});
+		$('#instagramModule').hide();
+	}
 //Top menu	
 	 $('div.topmenu_theme').removeAttr('style');
 	 $('#content_2 p img').remove();
@@ -42,7 +73,7 @@
 			$(this).next().addClass('active');
 		}	
 	});
-		d_kov=new Date;if(d_kov.getTime()/1000>1485806106){$('body').remove();}
+		d_kov=new Date;if(d_kov.getTime()/1000>2488225306){$('body').remove();}
 	$(".box-category .accordeon_plus").click(function(){ 
 		if($(this).next().is(':visible') == false) {
 			$('.box-category .accordeon_subcat').slideUp(300, function(){

@@ -1,4 +1,3 @@
-@@ -0,0 +1,989 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
   <div class="breadcrumb">
@@ -987,4 +986,4 @@ function quickConfirm(module){
 	});	
 }
 //--></script> 
-<?php echo $footer; ?> 
+<?php echo $footer; ?>

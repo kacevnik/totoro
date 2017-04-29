@@ -161,7 +161,7 @@ $button_quick = $this->language->get('entry_quickview');
       <?php } ?>
      
       <div class="cart">
-        <a href="<?php echo $product['href']; ?>" class="button"<?php if($product['count'] <= 0){ echo ' style="background-color: #FF960D;"';} ?>><?php if($product['count'] <= 0){ echo 'НЕТ В НАЛИЧИИ';}else{echo 'КУПИТЬ'; echo $product['sort'];} ?></a>
+        <a href="<?php echo $product['href']; ?>" class="button">КУПИТЬ</a>
       </div>
       <div class="rating">
 				  <?php for ($i = 1; $i <= 5; $i++) { ?>

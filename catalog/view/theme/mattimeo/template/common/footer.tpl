@@ -1,8 +1,9 @@
 
-<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-<div id="map" style="height: 370px;">
-
+<?php if($maps != '') { ?>  
+<div class="column-maps">
+<?php echo $maps; ?>
 </div>
+<?php } ?> 
 
 <div class="cont_bottom">
 
@@ -141,7 +142,7 @@ VK.Widgets.Group("vk_groups", {mode: <?php echo $vk_mode; ?>, width: "300", heig
       <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li> 
 	  <li><a href="<?php echo $bestseller; ?>"><?php echo $text_bestseller; ?></a></li>
 	  <li><a href="<?php echo $mostviewed; ?>"><?php echo $text_mostviewed; ?></a></li>
-	  
+	  <li><a href="<?php echo $latest; ?>"><?php echo $text_latest; ?></a></li>
    
    
     </ul>

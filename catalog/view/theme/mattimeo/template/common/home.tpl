@@ -96,6 +96,10 @@ min-height: 450px;
 	display: block;
 }
 </style>
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<div id="map" style="height: 370px;">
+
+</div>
 <div id="instagramModule">
 	<h4 class="istagramHeader"><a href="https://www.instagram.com/totoro_shop_/">Мы в Instagram</a></h4>
 	<?php

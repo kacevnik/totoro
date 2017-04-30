@@ -307,7 +307,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 	
 	<?php } ?>
   <?php
-  if ($firstname) echo '<div id="arein">'.$firstname.' '.$lastname.' <a href="/index.php?route=account/logout">[выйти]</a></div>';
+  if ($firstname) echo '<div id="arein"><a class="name_login" href="/index.php?route=account/account">'.$firstname.' '.$lastname.'</a> <a href="/index.php?route=account/logout">[выйти]</a></div>';
 ?>
 
     </div>

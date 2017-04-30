@@ -43,11 +43,43 @@
   </div>
   <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
+//Добавил код выбор способа доставки при зарегистрированном пользователе
+<?php if ($logged) { ?>
+	$.ajax({
+		url: 'index.php?route=checkout/shipping_method',
+		dataType: 'html',
+		success: function(html) {
+			$('#shipping-method .checkout-content').html(html);
+			
+			$('#shipping-address .checkout-content').slideUp('slow');
+			
+			$('#shipping-method .checkout-content').slideDown('slow');
+			
+			$('#shipping-address .checkout-heading a').remove();
+			$('#shipping-method .checkout-heading a').remove();
+			$('#payment-method .checkout-heading a').remove();
+			
+			$('#shipping-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');							
+		},
+		error: function(xhr, ajaxOptions, thrownError) {
+			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+		}
+	});	
+<?php } ?>
+//----------------------------------------------------------------------------------------------
 $('#checkout .checkout-content input[name=\'account\']').live('change', function() {
 	if ($(this).attr('value') == 'register') {
 		$('#payment-address .checkout-heading span').html('<?php echo $text_checkout_account; ?>');
 	} else {
-		$('#payment-address .checkout-heading span').html('<?php echo $text_checkout_payment_address; ?>');
+		$('#payment-address .checkout-heading span').html('Шаг 2: Контактные данные');
+	}
+});
+
+$('#shipping-method input[type=\'radio\']').live('change', function() {
+	if ($('#shipping-method input[id=\'pickup.pickup\']').attr('checked') == 'checked') {
+		$('#kdv_adress').slideUp('slow');
+	} else {
+		$('#kdv_adress').slideDown('slow');
 	}
 });
 
@@ -593,13 +625,10 @@ $('#button-shipping-address').live('click', function() {
 		}
 	});	
 });
-$('input[name=\'shipping_dostavka\']').toggle(function(){
-	$(this).attr('data')=1;
-},function(){
-	$(this).attr('data')=0;
-});
+
 // Guest
 $('#button-guest').live('click', function() {
+	
 	$.ajax({
 		url: 'index.php?route=checkout/guest/validate',
 		type: 'post',
@@ -618,7 +647,7 @@ $('#button-guest').live('click', function() {
 			
 			if (json['redirect']) {
 				location = json['redirect'];
-			} else if (json['error'] && $('input[name=\'shipping_dostavka\']').attr('data')!='1') {
+			} else if (json['error']) {
 				if (json['error']['warning']) {
 					$('#payment-address .checkout-content').prepend('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					
@@ -652,33 +681,10 @@ $('#button-guest').live('click', function() {
 				if (json['error']['address_1']) {
 					$('#payment-address input[name=\'address_1\'] + br').after('<span class="error">' + json['error']['address_1'] + '</span>');
 				}	
-				
-				if (json['error']['city']) {
-					$('#payment-address select[name=\'city\'] + br').after('<span class="error">' + json['error']['city'] + '</span>');
-				}
-				if (json['error']['street']) {
-					$('#payment-address input[name=\'street\'] + br').after('<span class="error">' + json['error']['street'] + '</span>');
-				}
-				if (json['error']['dom']) {
-					$('#payment-address input[name=\'dom\'] + br').after('<span class="error">' + json['error']['dom'] + '</span>');
-				}		
-				
-				if (json['error']['postcode']) {
-					$('#payment-address input[name=\'postcode\'] + br').after('<span class="error">' + json['error']['postcode'] + '</span>');
-				}	
-				
-				if (json['error']['country']) {
-					$('#payment-address select[name=\'country_id\'] + br').after('<span class="error">' + json['error']['country'] + '</span>');
-				}	
-				
-				if (json['error']['zone']) {
-					$('#payment-address select[name=\'zone_id\'] + br').after('<span class="error">' + json['error']['zone'] + '</span>');
-				}
-				console.log(json['error']);
 			} else {
 				<?php if ($shipping_required) { ?>	
+
 				var shipping_address = $('#payment-address input[name=\'shipping_address\']:checked').attr('value');
-				
 				if (shipping_address) {
 					$.ajax({
 						url: 'index.php?route=checkout/shipping_method',
@@ -852,7 +858,7 @@ $('#button-shipping-method').live('click', function() {
 	$.ajax({
 		url: 'index.php?route=checkout/shipping_method/validate',
 		type: 'post',
-		data: $('#shipping-method input[type=\'radio\']:checked, #shipping-method textarea'),
+		data: $('#shipping-method input[type=\'radio\']:checked, #shipping-method textarea, #shipping-method input[type=\'text\'], #shipping-method select'),
 		dataType: 'json',
 		beforeSend: function() {
 			$('#button-shipping-method').attr('disabled', true);
@@ -868,6 +874,18 @@ $('#button-shipping-method').live('click', function() {
 			if (json['redirect']) {
 				location = json['redirect'];
 			} else if (json['error']) {
+				if (json['error']['city']) {
+					$('#shipping-method select[name=\'city\'] + br').after('<span class="error">' + json['error']['city'] + '</span>');
+				}
+
+				if (json['error']['street']) {
+					$('#shipping-method input[name=\'street\'] + br').after('<span class="error">' + json['error']['street'] + '</span>');
+				}
+
+				if (json['error']['dom']) {
+					$('#shipping-method input[name=\'dom\'] + br').after('<span class="error">' + json['error']['dom'] + '</span>');
+				}
+
 				if (json['error']['warning']) {
 					$('#shipping-method .checkout-content').prepend('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 					

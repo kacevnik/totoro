@@ -11,7 +11,7 @@ class ControllerCheckoutShippingMethod extends Controller {
 			$shipping_address = $this->session->data['guest']['shipping'];
 		}
 
-		if (!empty($shipping_address)) {
+		if (empty($shipping_address)) {
 			// Shipping Methods
 			$quote_data = array();
 

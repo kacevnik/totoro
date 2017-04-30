@@ -25,24 +25,6 @@
 		$('#kdv_cart-total').remove();
 	}
 
-	ymaps.ready(init);
-	 
-	function init(){     
-	 
-	    var myMap;
-	 
-	    myMap = new ymaps.Map("map", {
-	        center: [55.757592, 37.636486],
-	        zoom: 17
-	    });
-
-	 	var myPlacemark = new ymaps.Placemark([55.757592, 37.636486] , {}, {
-	 		preset: 'islands#icon',
-            iconColor: '#0BA0A0'
-        });     
-	 
-	    myMap.geoObjects.add(myPlacemark);
-	}
 	if($(window).width() > 401){
 		$('#search input').show();
 		$('#search .sb-icon-search,#search .sb-search-submit').css({'background-size':'contain','height':'24px','width':'24px','top':'5px','right':'5px'});

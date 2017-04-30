@@ -97,6 +97,22 @@ min-height: 450px;
 }
 </style>
 <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script>
+      ymaps.ready(function () {
+
+        var myMap = new ymaps.Map("map", {
+            center: [55.757592, 37.636486],
+            zoom: 17
+        });
+
+        var myPlacemark = new ymaps.Placemark([55.757592, 37.636486] , {}, {
+        preset: 'islands#icon',
+              iconColor: '#0BA0A0'
+          });     
+     
+        myMap.geoObjects.add(myPlacemark);
+    });
+  </script>
 <div id="map" style="height: 370px;">
 
 </div>

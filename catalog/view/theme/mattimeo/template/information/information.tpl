@@ -9,11 +9,30 @@
 
   <?php echo $description; ?>
   <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script>
+      ymaps.ready(function () {
+        var myMap2 = new ymaps.Map("map2", {
+          center: [55.793819,  37.584011],
+          zoom: 16,
+        });
+
+        var myPlacemark2 = new ymaps.Placemark(
+            [55.793819, 37.584011],
+            {},{
+            preset: 'islands',
+            iconColor: '#0BA0A0'
+          });
+          myMap2.geoObjects.add(myPlacemark2);
+    });
+  </script>
     <div class="yap" id="map" style="height: 370px;">
 
     </div>
+    <div class="yap" id="map2" style="height: 370px;">
 
-  <div class="buttons">
+    </div>
+
+  <div class="buttons" style="margin-top: 25px;">
     <div class="right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
   </div>
   <?php echo $content_bottom; ?></div></div>

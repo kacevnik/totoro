@@ -1,4 +1,4 @@
-<?php if (!isset($redirect)) { ?>
+<?php if (!isset($redirect)) {echo $redirect; ?>
 <div class="checkout-product">
   <table>
     <thead>

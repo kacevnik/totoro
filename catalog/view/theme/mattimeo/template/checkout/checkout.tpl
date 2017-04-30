@@ -18,7 +18,8 @@
     </div>
     <?php } else { ?>
     <div id="payment-address">
-
+      <div class="checkout-heading"><span><?php echo $text_checkout_payment_address; ?></span></div>
+      <div class="checkout-content"></div>
     </div>
     <?php } ?>
     <?php if ($shipping_required) { ?>
@@ -42,33 +43,7 @@
   </div>
   <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
-//Добавил код выбор способа доставки при зарегистрированном пользователе
-<?php if ($logged) { ?>
-$(document).ready(function() {
-	$.ajax({
-		url: 'index.php?route=checkout/shipping_method',
-		dataType: 'html',
-		success: function(html) {
-			$('#shipping-method .checkout-content').html(html);
-			
-			$('#shipping-address .checkout-content').slideUp('slow');
-			$('#payment-address .checkout-content').slideUp('slow');
-			
-			$('#shipping-method .checkout-content').slideDown('slow');
-			
-			$('#shipping-address .checkout-heading a').remove();
-			$('#shipping-method .checkout-heading a').remove();
-			$('#payment-method .checkout-heading a').remove();
-			
-			$('#shipping-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');							
-		},
-		error: function(xhr, ajaxOptions, thrownError) {
-			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-		}
-	});
-});	
-<?php } ?>
-//----------------------------------------------------------------------------------------------
+
 $('#checkout .checkout-content input[name=\'account\']').live('change', function() {
 	if ($(this).attr('value') == 'register') {
 		$('#payment-address .checkout-heading span').html('<?php echo $text_checkout_account; ?>');

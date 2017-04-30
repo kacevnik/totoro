@@ -3,7 +3,7 @@
            $this->language->load('module/mattimeotheme');
            $text_category = $this->language->get('text_category');
   ?>    
-    <li class="parent categories"><a><?php echo $text_category; ?></a> 
+    <li class="parent categories"><a href="/index.php"><?php echo $text_category; ?></a> 
    
     <div class="topmenu_theme">
     

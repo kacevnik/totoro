@@ -362,9 +362,15 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
                                       <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
                                     </a>
                                     <div class="kdv_store_name">TOTORO SHOP</div>
+                                    <?php if(!$firstname){ ?>
                                     <div class="kdv_menu_login">
                                       <a href="http://totoro-shop.ru/index.php?route=account/login"></a>
                                     </div>
+                                    <?php }else{ ?>
+                                    <div class="kdv_menu_login_exit">
+                                      <a href="http://totoro-shop.ru/index.php?route=account/logout" title="Выйти"></a>
+                                    </div>
+                                    <?php } ?>
                                     <div class="kdv_menu_cart">
                                       <a href="http://totoro-shop.ru/index.php?route=checkout/cart">
                                       </a>

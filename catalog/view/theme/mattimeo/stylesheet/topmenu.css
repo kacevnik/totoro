@@ -260,6 +260,20 @@ clear: both;
 	    background-size: 56%;
 	    display: block;
 	}
+
+	.kdv_menu_login_exit{
+	    width: 40px;
+	    height: 50px;
+	    position: absolute;
+	    right: 43px;
+	}
+	.kdv_menu_login_exit a{
+	    width: 40px;
+	    height: 50px;
+	    background: url(../image/icon/icon_exit.png) no-repeat center center;
+	    background-size: 75%;
+	    display: block;
+	}
 	.kdv_menu_cart{
 		width: 40px;
 	    height: 50px;

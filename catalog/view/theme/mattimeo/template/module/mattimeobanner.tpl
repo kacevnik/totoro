@@ -1,6 +1,6 @@
 <?php  if(!empty($tabs)){ ?>
 
-<h3 class="nodisplay heeder" id="presents<?php echo $module; ?>"></h3>
+<h3 class="nodisplay heeder" id="presents<?php echo $module; ?>" <?php if($module == 1 && count($tabs) == 4){echo 'style="display: block;"';} ?>><?php if($module == 1 && count($tabs) == 4){echo "Самое популярное";} ?></h3>
 <div id="matban_box<?php echo $module; ?>" class="matban_box
                   <?php if ($dinamic == '1') { ?>maska_text<?php }  
                   elseif ($dinamic == '2') { ?>beforetext<?php } 

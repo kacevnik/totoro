@@ -16,7 +16,7 @@
 
 var element = $('#carousel0').detach();
 $('#content').append(element);
-$('#carousel0').prepend('<h3 class="heeder h3h">Наш магазин</h3>')
+$('#carousel0').prepend('<div class="box-heading-custom">Наши магазины</div>')
 
 $('#carousel<?php echo $module; ?> ul').jcarousel({
 	vertical: false,

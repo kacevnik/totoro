@@ -6,7 +6,7 @@ $button_wishlist = $this->language->get('button_wishlist');
 $this->language->load('module/mattimeotheme');
 $button_quick = $this->language->get('entry_quickview');
 ?>
-  <div class="box-heading"><?php echo $heading_title; ?></div>
+  <div class="box-heading-custom">Самые популярные</div>
   <div class="box-content">
   <div class="box-product">
   

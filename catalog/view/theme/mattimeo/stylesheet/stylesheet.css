@@ -3240,3 +3240,21 @@ display: none;
     font-family: london;
     color: #ED7E18;
 }
+
+.box-heading-custom{
+	background-color: #0BA0A0;
+	padding-left: 10px;
+	color: #FBF2D3;
+	padding: 10px 0 0 10px;
+	font-size: 20px;
+	border-bottom: double 3px #c3a79b;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	margin-bottom: 20px;
+	text-align: left;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 34px;
+	text-decoration: none;
+}

@@ -30,9 +30,10 @@ $button_quick = $this->language->get('entry_quickview');
        
  <?php } ?>
  
-        
+<div id="carousel_fratured">   
+<ul class="jcarousel-skin-opencart">     
          <?php foreach ($products as $product) { ?>
-               <div class="itemcolumns">
+               <li class="itemcolumns">
                <div>
                  <div class="img_but">
                  <?php if ($product['thumb']) { ?>
@@ -92,10 +93,21 @@ $button_quick = $this->language->get('entry_quickview');
         </div>
               
         </div>
-      </div>
+      </li>
       <?php } ?>
       
-      
+ </ul>
+ </div>
+ <script type="text/javascript">
+
+$('#carousel_fratured').jcarousel({
+	vertical: false,
+	visible: 4,
+	scroll: 1
+});
+
+
+</script>    
       
  <?php if ( (isset($position)) && ($position == 'column_left' || $position == 'column_right')){ ?> 
  

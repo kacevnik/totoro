@@ -3258,3 +3258,39 @@ display: none;
 	line-height: 34px;
 	text-decoration: none;
 }
+
+#column-left + #content  .box-content > .box-product > #carousel_fratured{
+	width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0);
+}
+
+#column-left + #content  .box-content > .box-product > #carousel_fratured li{
+	background: #fff;
+}
+
+#column-left + #content  .box-content > .box-product > #carousel_fratured .jcarousel-prev{
+	background-color: #0BA0A0;
+	position: absolute;
+    left:5px;
+    cursor: pointer;
+    background-position: 0px center;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    top: 45%;
+    background-image: url(../image/icon/prev_next.png);
+}
+
+#column-left + #content  .box-content > .box-product > #carousel_fratured .jcarousel-next{
+	background-color: #0BA0A0;
+	position: absolute;
+    right: 5px;
+    cursor: pointer;
+    background-position: -36px center;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    top: 45%;
+    background-image: url(../image/icon/prev_next.png);
+}

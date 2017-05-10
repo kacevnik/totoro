@@ -37,6 +37,7 @@
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/mattimeo/stylesheet/stylesheet.css" />
 <link rel="stylesheet" href="catalog/view/javascript/FontAwesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="catalog/view/theme/mattimeo/js/source/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/mattimeo/stylesheet/bootstrap.min.css" />
 <!--Color scheme 
 *******************************************-->
 <?php if (($this->config->get('colorsite') !='0' && $this->config->get('colorsite') !='' && $this->config->get('colorsite') !='none')) { ?>
@@ -51,6 +52,7 @@
 <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/mattimeo/js/source/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="catalog/view/theme/mattimeo/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
 
 <?php foreach ($scripts as $script) { ?>

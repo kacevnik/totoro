@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box" id="featured">
 <?php
 $this->language->load('module/category');
 $button_compare = $this->language->get('button_compare');

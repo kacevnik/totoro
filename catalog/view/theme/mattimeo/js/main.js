@@ -8,6 +8,7 @@
 	
  	if($(window).width() < 401){
 		$('#ma-mobilemenu').css({'max-height':$(window).height(), 'overflow-y': 'scroll'});
+		$('#featured').hide();
 	}
 
 

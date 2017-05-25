@@ -3294,3 +3294,7 @@ display: none;
     top: 45%;
     background-image: url(../image/icon/prev_next.png);
 }
+
+#column-left + #content  .box-content > .box-product .body_carusel{
+	width: 100%;
+}

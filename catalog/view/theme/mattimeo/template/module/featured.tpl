@@ -103,7 +103,8 @@ $button_quick = $this->language->get('entry_quickview');
 $('#carousel_fratured').jcarousel({
 	vertical: false,
 	visible: 4,
-	scroll: 1
+	scroll: 1,
+	auto: 1000
 });
 
 

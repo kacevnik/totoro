@@ -68,9 +68,6 @@ DD_belatedPNG.fix('#logo img');
 <![endif]-->
 <!--JS 
 *******************************************-->
-<script type="text/javascript">
-  Cufon.replace("h1");
-</script>
 <script type="text/javascript" src="catalog/view/theme/<?php echo $this->config->get('config_template'); ?>/js/jquery.carouFredSel-6.2.1-packed.js"></script>
 <script type="text/javascript" src="catalog/view/theme/<?php echo $this->config->get('config_template'); ?>/js/owl.carousel.js"></script>
 <script type="text/javascript" src="catalog/view/theme/<?php echo $this->config->get('config_template'); ?>/js/main.js"></script>

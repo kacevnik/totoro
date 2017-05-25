@@ -1,7 +1,13 @@
 <?php  if(!empty($tabs)){ ?>
-<?php if($module == 1){ ?>
+<?php if($module == 1 && $dinamic == '3'){ ?>
+<div class="box-heading-custom">Самые популярные</div>
+<?php } 
+  if($module == 2){
+?>
 <div class="box-heading-custom">Категории</div>
-<?php } ?>
+<?php 
+  }
+?>
 <div id="matban_box<?php echo $module; ?>" class="matban_box
                   <?php if ($dinamic == '1') { ?>maska_text<?php }  
                   elseif ($dinamic == '2') { ?>beforetext<?php } 

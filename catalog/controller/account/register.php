@@ -431,23 +431,6 @@ class ControllerAccountRegister extends Controller {
 			$this->error['telephone'] = $this->language->get('error_telephone');
 		}
 
-		if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 128)) {
-			$this->error['city'] = $this->language->get('error_city');
-		}
-
-		if ((utf8_strlen($this->request->post['street']) < 2) || (utf8_strlen($this->request->post['street']) > 128)) {
-			$this->error['street'] = $this->language->get('error_street');
-		}
-
-		if ((utf8_strlen($this->request->post['dom']) < 1) || (utf8_strlen($this->request->post['dom']) > 128)) {
-			$this->error['dom'] = $this->language->get('error_dom');
-		}
-
-
-		if ((utf8_strlen($this->request->post['password']) < 4) || (utf8_strlen($this->request->post['password']) > 20)) {
-			$this->error['password'] = $this->language->get('error_password');
-		}
-
 		if ($this->request->post['confirm'] != $this->request->post['password']) {
 			$this->error['confirm'] = $this->language->get('error_confirm');
 		}

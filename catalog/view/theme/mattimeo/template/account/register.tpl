@@ -45,58 +45,6 @@
         </tr>
       </table>
     </div>
-    <h2><?php echo $text_your_address; ?></h2>
-    <div class="content">
-      <table class="form">      
-        <tr style="display: <?php echo (count($customer_groups) > 1 ? 'table-row' : 'none'); ?>;">
-          <td><?php echo $entry_customer_group; ?></td>
-          <td><?php foreach ($customer_groups as $customer_group) { ?>
-            <?php if ($customer_group['customer_group_id'] == $customer_group_id) { ?>
-            <input type="radio" name="customer_group_id" value="<?php echo $customer_group['customer_group_id']; ?>" id="customer_group_id<?php echo $customer_group['customer_group_id']; ?>" checked="checked" />
-            <label for="customer_group_id<?php echo $customer_group['customer_group_id']; ?>"><?php echo $customer_group['name']; ?></label>
-            <br />
-            <?php } else { ?>
-            <input type="radio" name="customer_group_id" value="<?php echo $customer_group['customer_group_id']; ?>" id="customer_group_id<?php echo $customer_group['customer_group_id']; ?>" />
-            <label for="customer_group_id<?php echo $customer_group['customer_group_id']; ?>"><?php echo $customer_group['name']; ?></label>
-            <br />
-            <?php } ?>
-            <?php } ?></td>
-        </tr>      
-        <tr>
-          <td><span class="required">*</span> <?php echo $entry_city; ?></td>
-          <td><input type="text" name="city" value="<?php echo $city; ?>" />
-            <?php if ($error_city) { ?>
-            <span class="error"><?php echo $error_city; ?></span>
-            <?php } ?></td>
-        </tr>
-        <tr>
-          <td><span class="required">*</span> <?php echo $entry_street; ?></td>
-          <td><input type="text" name="street" value="<?php echo $street; ?>" />
-            <?php if ($error_street) { ?>
-            <span class="error"><?php echo $error_street; ?></span>
-            <?php } ?></td>
-        </tr>
-        <tr>
-          <td><span class="required">*</span> <?php echo $entry_dom; ?></td>
-          <td><input type="text" name="dom" value="<?php echo $dom; ?>" />
-            <?php if ($error_dom) { ?>
-            <span class="error"><?php echo $error_dom; ?></span>
-            <?php } ?></td>
-        </tr>
-        <tr>
-          <td><?php echo $entry_pod; ?></td>
-          <td><input type="text" name="pod" value="<?php echo $pod; ?>" /></td>
-        </tr>
-        <tr>
-          <td><?php echo $entry_eta; ?></td>
-          <td><input type="text" name="eta" value="<?php echo $eta; ?>" /></td>
-        </tr>
-        <tr>
-          <td><?php echo $entry_kva; ?></td>
-          <td><input type="text" name="kva" value="<?php echo $kva; ?>" /></td>
-        </tr>
-      </table>
-    </div>
     <h2><?php echo $text_your_password; ?></h2>
     <div class="content">
       <table class="form">

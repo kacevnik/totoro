@@ -47,15 +47,25 @@
     <div class="stylebanner  <?php if (($dinamic == '1') || ($dinamic == '2')) { ?> count-<?php echo count($tabs); ?><?php } ?>" id="mattimeobanner-<?php echo $numTab; ?><?php echo $module; ?>" >
     
     <?php if ($tab['href']) { ?><a href="<?php echo $tab['href']; ?>"> <?php } ?>
-        
+    <?php 
+      if(preg_match('/gif/i', $tab['headingtext'][$lang]) == 1){
+        $hendler = str_replace('gif', "", $tab['headingtext'][$lang]); 
+        $full_img = 1;
+      }else{
+        $hendler = $tab['headingtext'][$lang]; 
+      }
+    ?>
         
         <div class="one">
          <div>
          <div class="maska"></div>
+         <?php if ($full_img == 1) { ?>
+         <img style="width: 100%;" src="<?php echo str_replace('-'.$image_width.'x'.$image_height, '', str_replace('/cache', '', $tab['image'])); ?>"
+         <?php }else{ ?>
          <img style="width: 100%;" src="<?php echo substr($tab['image'], 0, -11).'500x500.'.substr($tab['image'], -3); ?>" 
-         <?php if (isset($tab['headingtext'][$lang])){ ?>
-         alt="<?php echo $tab['headingtext'][$lang]; ?>" 
-         title="<?php echo $tab['headingtext'][$lang]; ?>"
+         <?php }if (isset($tab['headingtext'][$lang])){ ?>
+         alt="<?php echo $hendler; ?>" 
+         title="<?php echo $hendler; ?>"
          <?php } ?>>
          </div> 
         </div>
@@ -64,7 +74,7 @@
         <?php if ( (isset($tab['title'][$lang])) && $tab['title'][$lang] !='' ) { ?>
         <div class="two"><div>
           <?php if (isset($tab['headingtext'][$lang]))  { ?>
-           <div class="threeheading"> <?php echo $tab['headingtext'][$lang]; ?></div>
+           <div class="threeheading"> <?php echo $hendler; ?></div>
            <?php } ?> 
          <div class="textbanner2"><?php echo html_entity_decode($tab['title'][$lang]); ?></div>
         </div></div>

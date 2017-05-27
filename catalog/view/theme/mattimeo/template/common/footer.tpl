@@ -126,7 +126,6 @@
       <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
        <?php } ?>      
       <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li> 
-	  <li><a href="<?php echo $bestseller; ?>"><?php echo $text_bestseller; ?></a></li>
 	  <li><a href="<?php echo $mostviewed; ?>"><?php echo $text_mostviewed; ?></a></li>
 	  
    

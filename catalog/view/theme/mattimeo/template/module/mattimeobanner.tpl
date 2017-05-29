@@ -1,13 +1,19 @@
 <?php  if(!empty($tabs)){ ?>
-<?php if($module == 1 && $dinamic == '3'){ ?>
-<div class="box-heading-custom">Самые популярные</div>
-<?php } 
-  if($module == 2){
-?>
-<div class="box-heading-custom">Категории</div>
+
 <?php 
+  $header_modul = '';
+  foreach ($tabs as $numTab => $tab) {
+    if($header_item = explode('[', $tab['headingtext'][$lang])){
+      $header_modul.= explode(']', $header_item[1])[0];
+    }
   }
 ?>
+
+<?php if($header_modul){ ?>
+<div class="box-heading-custom"><?php echo $header_modul; ?></div>
+<? } ?>
+
+
 <div id="matban_box<?php echo $module; ?>" class="matban_box
                   <?php if ($dinamic == '1') { ?>maska_text<?php }  
                   elseif ($dinamic == '2') { ?>beforetext<?php } 
@@ -49,10 +55,10 @@
     <?php if ($tab['href']) { ?><a href="<?php echo $tab['href']; ?>"> <?php } ?>
     <?php 
       if(preg_match('/gif/i', $tab['headingtext'][$lang]) == 1){
-        $hendler = str_replace('gif', "", $tab['headingtext'][$lang]); 
+        $hendler = explode('[', str_replace('gif', "", $tab['headingtext'][$lang]))[0]; 
         $full_img = 1;
       }else{
-        $hendler = $tab['headingtext'][$lang]; 
+        $hendler = explode('[', $tab['headingtext'][$lang])[0]; 
       }
     ?>
         

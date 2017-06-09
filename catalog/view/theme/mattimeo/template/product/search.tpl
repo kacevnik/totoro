@@ -144,7 +144,7 @@ $button_quick = $this->language->get('entry_quickview');
       <?php } ?>
      
       <div class="cart">
-        <input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" />
+        <a href="<?php echo $product['href']; ?>" class="button"<?php if($product['count'] <= 0){ echo ' style="background-color: #FF960D;"';} ?>><?php if($product['count'] <= 0){ echo 'НЕТ В НАЛИЧИИ';}else{echo 'КУПИТЬ'; echo $product['sort'];} ?></a>
       </div>
        <div class="rating">
 				  <?php for ($i = 1; $i <= 5; $i++) { ?>

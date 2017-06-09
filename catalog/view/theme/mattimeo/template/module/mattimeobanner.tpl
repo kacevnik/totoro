@@ -107,7 +107,7 @@
 				 	 <?php if ($this->config->get('slider_pauseTime') != '') { ?>
 			     autoPlay: <?php echo $this->config->get('slider_pauseTime'); ?>,
 			         <?php } else {?>
-				 autoPlay: 8000,	 
+				 autoPlay: 3000,	 
 					 <?php } ?>
 				<?php if ($this->config->get('slider_animSpeed') != '') { ?>
 			      slideSpeed: <?php echo $this->config->get('slider_animSpeed'); ?>,

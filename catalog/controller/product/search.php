@@ -301,6 +301,7 @@ class ControllerProductSearch extends Controller {
 					'price'       => $price,
 					'special'     => $special,
 					'tax'         => $tax,
+					'count'       => $result['quantity'],
 					'rating'      => $result['rating'],
 					'sticker'     => $stickers,
 					'benefits'    => $benefits,

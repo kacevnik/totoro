@@ -3122,7 +3122,7 @@ display: none;
 }
 #vk_groups{
     position: absolute;
-    bottom: 380px;
+    bottom: 355px;
     left: 22%;
 }
 .yesmaps {
@@ -3144,10 +3144,11 @@ display: none;
 }
 #instagramModule{
 	width: 300px;
-    /*height: 410px;*/
     position: absolute;
     bottom: 338px;
     right: 27%;
+    background: #fff;
+	padding: 0 5px;
 }
 #vk_Module{
 width: 300px;

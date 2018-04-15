@@ -134,13 +134,13 @@ VK.Widgets.Group("vk_groups", {mode: 0, width: "300", height: "400"}, 70703529);
 <div id="instagramModule">
 	<h4 class="istagramHeader"><a href="https://www.instagram.com/totoro_shop_/">Мы в Instagram</a></h4>
 	<!-- Без профиля -->
-<iframe src='/inwidget/index.php?toolbar=false&view=20' scrolling='no' frameborder='no' style='border:none;width:300px;height:403px;overflow:hidden;'></iframe>
+<!-- <iframe src='/inwidget/index.php?toolbar=false&view=20' scrolling='no' frameborder='no' style='border:none;width:300px;height:403px;overflow:hidden;'></iframe> -->
 	<?php
 
 $user_id="34f77e6233474ccd87f422e9d4ecc775";
-$access_token = "bbc661b776bd41909beb7f3eff0bd62d ";
+$access_token = "1398495560.c913388.b8fcc726503e4405929abdd5d0c2a68c";
 
-$url = "https://api.instagram.com/v1/users/".$user_id."/media/recent?access_token=".$access_token;
+$url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=".$access_token;
 		
 $ch = curl_init($url); 
 

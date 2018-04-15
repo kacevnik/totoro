@@ -286,9 +286,11 @@ input#increase{
 
 /* checkout */
 .checkout-heading {
-	background-color: #f8f5f1;
 	padding:16px;
-	color: #555555;	}
+}
+.checkout-heading a {
+	color:#ffffff;
+}
 
 .checkout-product tfoot td.total{
 	color: #e67879;}

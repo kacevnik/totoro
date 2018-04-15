@@ -41,7 +41,11 @@
       <tr>
         <td class="left"><?php echo $payment_address; ?></td>
         <?php if ($shipping_address) { ?>
-        <td class="left"><?php echo $shipping_address; ?></td>
+        <td class="left"><?php echo $shipping_address; ?>
+        <?php
+            echo $simple_address;
+        ?>
+        </td>
         <?php } ?>
       </tr>
     </tbody>
@@ -140,3 +144,4 @@
   </div>
   <?php echo $content_bottom; ?></div>
 <?php echo $footer; ?> 
+

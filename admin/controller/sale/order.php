@@ -1296,6 +1296,9 @@ class ControllerSaleOrder extends Controller {
 	}
 
 	public function info() {
+        
+
+        
 		$this->load->model('sale/order');
 
 		if (isset($this->request->get['order_id'])) {
@@ -1308,6 +1311,61 @@ class ControllerSaleOrder extends Controller {
 
 		if ($order_info) {
 			$this->language->load('sale/order');
+            
+            
+// start serg        
+            if ($order_info['shipping_address_format']) {
+                $format = $order_info['shipping_address_format'];
+            } else {
+                $format = '{company}' . "\n" . '{address_1}' . "\n" . '{address_2}' . "\n" . '{city} {postcode}' . "\n" . '{zone}' . "\n" . '{country}';
+            }
+            
+            $find = array(
+                '{company}',
+                '{address_1}',
+                '{address_2}',
+                '{city}',
+                '{postcode}',
+                '{zone}',
+                '{zone_code}',
+                '{country}',
+            );
+
+            $replace = array(
+                'company'   => $order_info['shipping_company'],
+                'address_1' => $order_info['shipping_address_1'],
+                'address_2' => $order_info['shipping_address_2'],
+                'city'      => $order_info['shipping_city'],
+                'postcode'  => $order_info['shipping_postcode'],
+                'zone'      => $order_info['shipping_zone'],
+                'zone_code' => $order_info['shipping_zone_code'],
+                'country'   => $order_info['shipping_country']
+            );
+
+            $this->data['shipping_address'] = str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format))));
+
+            $this->load->model('setting/setting');  
+            $store_info = $this->model_setting_setting->getSetting('config', $order_info['store_id']);
+    
+            $this->load->model('module/simplecustom');
+
+            $customInfo = $this->model_module_simplecustom->getCustomFields('order', $order_info['order_id'], $order_info['language_code']);
+            
+            $simple_address = '';
+            if (isset($customInfo)){
+                    if (isset($customInfo['shipping_dom']) and !empty($customInfo['shipping_dom']))
+                        $simple_address.=' Дом:'.$customInfo['shipping_dom'].',';
+                    if (isset($customInfo['shipping_pod']) and !empty($customInfo['shipping_pod']))
+                        $simple_address.=' Подьезд:'.$customInfo['shipping_pod'].',';
+                    if (isset($customInfo['shipping_eta']) and !empty($customInfo['shipping_eta']))
+                        $simple_address.=' Этаж:'.$customInfo['shipping_eta'].',';
+                    if (isset($customInfo['shipping_kva']) and !empty($customInfo['shipping_kva']))
+                        $simple_address.=' Кв.:'.$customInfo['shipping_kva'];
+        
+                    $this->data['simple_address'] = $simple_address;
+            }
+// end serg
+            
 
 			$this->document->setTitle($this->language->get('heading_title'));
 

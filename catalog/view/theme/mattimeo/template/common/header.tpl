@@ -318,7 +318,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
           <br />
           <input type="password" name="password" value="<?php echo $password; ?>" placeholder="Пароль *" required style="margin-bottom: 4px; width: 234px"/>
           <br />
-          <a href="http://totoro-shop.ru/index.php?route=account/register">Регистрация</a>
+          <a href="https://totoro-shop.ru/index.php?route=account/register">Регистрация</a>
           <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a>
           <input type="submit" value="<?php echo $button_login; ?>" class="button" />
           <?php if ($redirect) { ?>
@@ -361,15 +361,15 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
                                     <div class="kdv_store_name">TOTORO SHOP</div>
                                     <?php if(!$firstname){ ?>
                                     <div class="kdv_menu_login">
-                                      <a href="http://totoro-shop.ru/index.php?route=account/login"></a>
+                                      <a href="https://totoro-shop.ru/index.php?route=account/login"></a>
                                     </div>
                                     <?php }else{ ?>
                                     <div class="kdv_menu_login_exit">
-                                      <a href="http://totoro-shop.ru/index.php?route=account/logout" title="Выйти"></a>
+                                      <a href="https://totoro-shop.ru/index.php?route=account/logout" title="Выйти"></a>
                                     </div>
                                     <?php } ?>
                                     <div class="kdv_menu_cart">
-                                      <a href="http://totoro-shop.ru/index.php?route=checkout/cart">
+                                      <a href="https://totoro-shop.ru/index.php?route=checkout/cart">
                                       </a>
                                     </div>
                                     <a class="btn btn-navbar">
@@ -511,7 +511,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 <ul>
   <li style="width: 22%;"><a href="https://vk.com/totoroshopp" target="_blank" class="kdv_vk"></a></li>
   <li style="width: 23%;"><a href="https://www.instagram.com/totoro_shop_/" class="kdv_insta" target="_blank"></a></li>
-  <li style="width: 25%;"><a href="http://totoro-shop.ru/index.php?route=information/contact" class="kdv_mail"></a></li>
+  <li style="width: 25%;"><a href="https://totoro-shop.ru/index.php?route=information/contact" class="kdv_mail"></a></li>
   <li style="width: 30%;"><a href="tel:+79261970800" class="kdv_phone"></a></li>
 </ul>
   <div class="kdv_adress">

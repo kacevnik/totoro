@@ -304,11 +304,19 @@ class ModelCheckoutOrder extends Model {
 			$template->data['telephone'] = $order_info['telephone'];
 			$template->data['ip'] = $order_info['ip'];
 			
+/*            
 			if ($comment && $notify) {
 				$template->data['comment'] = nl2br($comment);
 			} else {
 				$template->data['comment'] = '';
 			}
+*/          
+// Комментарий к заказу  
+// start serg  06.09
+  $template->data['comment'] = nl2br($order_info['comment']);
+//
+            
+            
 						
 			if ($order_info['payment_address_format']) {
 				$format = $order_info['payment_address_format'];
@@ -377,6 +385,30 @@ class ModelCheckoutOrder extends Model {
 			);
 		
 			$template->data['shipping_address'] = str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format))));
+
+
+// start serg  06.09
+            $this->load->model('tool/simplecustom');
+            $customInfo = $this->model_tool_simplecustom->getCustomFields('order', $order_id, $order_info['language_code']);
+    
+            $simple_address = '';
+            if (isset($customInfo)){
+                if (isset($customInfo['shipping_dom']))
+                    $simple_address.=' Дом:'.$customInfo['shipping_dom'].',';
+                if (isset($customInfo['shipping_pod']))
+                    $simple_address.=' Подьезд:'.$customInfo['shipping_pod'].',';
+                if (isset($customInfo['shipping_eta']))
+                    $simple_address.=' Этаж:'.$customInfo['shipping_eta'].',';
+                if (isset($customInfo['shipping_kva']))
+                    $simple_address.=' Кв.:'.$customInfo['shipping_kva'];
+            
+                if (!empty($simple_address)){
+                    $simple_address = '<br>'.$simple_address;
+                }
+  
+                $template->data['shipping_address']  .= $simple_address;
+             }
+// end serg 
 			
 			// Products
 			$template->data['products'] = array();

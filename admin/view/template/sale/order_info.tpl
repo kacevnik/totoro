@@ -154,6 +154,17 @@
             <td><?php echo $text_date_modified; ?></td>
             <td><?php echo $date_modified; ?></td>
           </tr>
+          
+<!-- serge -->
+          <tr>
+            <td>Адрес доставки:</td>
+            <td>
+            <?php if(shipping_address) echo $shipping_address; ?>
+            <?php if($simple_address) echo '<br>'.$simple_address; ?></td>
+          </tr>
+
+<!-- serge -->          
+          
         </table>
       </div>
       <div id="tab-payment" class="vtabs-content">

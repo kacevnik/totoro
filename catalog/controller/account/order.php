@@ -153,6 +153,7 @@ class ControllerAccountOrder extends Controller {
 			$order_id = 0;
 		}	
 
+       
 		if (!$this->customer->isLogged()) {
 			$this->session->data['redirect'] = $this->url->link('account/order/info', 'order_id=' . $order_id, 'SSL');
 
@@ -274,7 +275,7 @@ class ControllerAccountOrder extends Controller {
 			} else {
 				$format = '{firstname} {lastname}' . "\n" . '{company}' . "\n" . '{address_1}' . "\n" . '{address_2}' . "\n" . '{city} {postcode}' . "\n" . '{zone}' . "\n" . '{country}';
 			}
-
+            
 			$find = array(
 				'{firstname}',
 				'{lastname}',
@@ -285,7 +286,7 @@ class ControllerAccountOrder extends Controller {
 				'{postcode}',
 				'{zone}',
 				'{zone_code}',
-				'{country}'
+				'{country}',
 			);
 
 			$replace = array(
@@ -305,6 +306,24 @@ class ControllerAccountOrder extends Controller {
 
 			$this->data['shipping_method'] = $order_info['shipping_method'];
 
+            
+// serge start
+    $simple_address = '<br>';
+    if (isset($customInfo)){
+        if (isset($customInfo['shipping_dom']))
+            $simple_address.=' Дом:'.$customInfo['shipping_dom'].',';
+        if (isset($customInfo['shipping_pod']))
+            $simple_address.=' Подьезд:'.$customInfo['shipping_pod'].',';
+        if (isset($customInfo['shipping_eta']))
+            $simple_address.=' Этаж:'.$customInfo['shipping_eta'].',';
+        if (isset($customInfo['shipping_kva']))
+            $simple_address.=' Кв.:'.$customInfo['shipping_kva'];
+        
+        $this->data['simple_address'] = $simple_address;
+    }
+//        
+
+            
 			$this->data['products'] = array();
 
 			$products = $this->model_account_order->getOrderProducts($this->request->get['order_id']);

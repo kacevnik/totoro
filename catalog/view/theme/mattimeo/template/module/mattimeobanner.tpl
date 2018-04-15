@@ -98,25 +98,25 @@
 	
    
 <script type="text/javascript">	
-                $(document).ready(function(){
-				$('.double:even').addClass('doubleleft');	
-				 $("#matban_box<?php echo $module; ?>.slider_banner .owl-addbanner").owlCarousel({
-                 navigation : true,
-                 pagination : false,
-				 singleItem : true,
-				 	 <?php if ($this->config->get('slider_pauseTime') != '') { ?>
-			     autoPlay: <?php echo $this->config->get('slider_pauseTime'); ?>,
-			         <?php } else {?>
-				 autoPlay: 3000,	 
-					 <?php } ?>
-				<?php if ($this->config->get('slider_animSpeed') != '') { ?>
-			      slideSpeed: <?php echo $this->config->get('slider_animSpeed'); ?>,
-			    <?php } ?>
-				 items 	 : 1 
-			    });
-	
-                 });                                                                      
-               </script>
+  $(document).ready(function(){
+	$('.double:even').addClass('doubleleft');	
+	 $("#matban_box<?php echo $module; ?>.slider_banner .owl-addbanner").owlCarousel({
+           navigation : true,
+           pagination : false,
+	 singleItem : true,
+	 	 <?php if ($this->config->get('slider_pauseTime') != '') { ?>
+     autoPlay: <?php echo $this->config->get('slider_pauseTime'); ?>,
+         <?php } else {?>
+	 autoPlay: 3000,	 
+		 <?php } ?>
+	<?php if ($this->config->get('slider_animSpeed') != '') { ?>
+      slideSpeed: <?php echo $this->config->get('slider_animSpeed'); ?>,
+    <?php } ?>
+	 items 	 : 1 
+    });
+
+           });                                                                      
+</script>
 </div>
 <?php } ?>
 

@@ -47,4 +47,6 @@ Disallow: /*?product/product&product_id=
 Disallow: /*?product/category&path=            
 Disallow: /*?route=common/home                 
 Disallow: /*?product_id
-Clean-param: tracking
+
+Host: https://totoro-shop.ru/
+Sitemap: https://totoro-shop.ru/sitemap.xml

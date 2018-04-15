@@ -44,19 +44,22 @@
 #navbar-inner{ min-height:50px;}
 
 #ma-mobilemenu { 
-display: none;
-height: auto;
-
+	display: none;
+	overflow: scroll;
 }
+
 .nav-collapse, .nav-collapse.collapse { 
-overflow-x: hidden;
-overflow-y: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	max-height: 340px!important;
+}
+.mobilemenu .nav-collapse .collapse{
+	max-height: 340px!important;
 }
 .menu1 .mobilemenu { 
-list-style: none;
-margin: 0px;
-padding: 0px;
-
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
 .menu1 .mobilemenu .categ_image{ display:none;}   
 .nav-collapse { 
@@ -190,7 +193,7 @@ clear: both;
 	    position: absolute;
 	    left: 75px;
 	    line-height: 20px;
-	    font-size: 28px;
+	    font-size: 25px;
 	    color: #fbf2d3;
 	    top: 17px;
 	    font-family: london, Arial, Helvetica, sans-serif
@@ -209,7 +212,7 @@ clear: both;
 	    margin-top: 0px;
 	    margin-bottom: 0px;
 	    margin-right: 1.5%;
-	    margin-left: 1.5%;
+	    margin-left: 0;
 	}
 	.kdv_w ul li{
 	    display: block;
@@ -221,13 +224,17 @@ clear: both;
 	    height: 50px;
 	}
 	.kdv_adress{
-		font-size: 16px;
+		font-size: 15px;
 	    font-family: london, Arial, Helvetica, sans-serif;
 	    padding-top: 7px;
 	    color: #707e7e;
 	}
 	#header{display: none;}
-	.kdv_adress span{display: block; text-align: center;}
+	.kdv_adress span{
+		display: block; 
+		text-align: center;
+		white-space: nowrap;
+	}
 	.kdv_vk{
 		background: url(../image/icon/kdv_vk.png) no-repeat center center;
 		background-size: 74%;

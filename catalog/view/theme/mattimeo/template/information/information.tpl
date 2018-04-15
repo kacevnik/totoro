@@ -8,7 +8,7 @@
   <h1><?php echo $heading_title; ?></h1>
 
   <?php echo $description; ?>
-  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script>
       ymaps.ready(function () {
 

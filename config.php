@@ -3,7 +3,7 @@
 define('HTTP_SERVER', 'http://totoro-shop.ru/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://totoro-shop.ru/');
+define('HTTPS_SERVER', 'https://totoro-shop.ru/');
 
 // DIR
 define('DIR_APPLICATION', '/home/totoro-sho/totoro-shop.ru/docs/catalog/');

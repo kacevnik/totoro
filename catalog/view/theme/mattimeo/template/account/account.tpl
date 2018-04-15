@@ -11,7 +11,7 @@
   </div>
   <h1><?php echo $heading_title; ?></h1>
   <div class="content">
-  <form action="http://totoro-shop.ru/index.php?route=account/edit" method="post" enctype="multipart/form-data">
+  <form action="https://totoro-shop.ru/index.php?route=account/edit" method="post" enctype="multipart/form-data">
           <table class="form">
         <tr>
           <td><span class="required">*</span> <?php echo $entry_firstname; ?></td>

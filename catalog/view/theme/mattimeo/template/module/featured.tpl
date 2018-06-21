@@ -98,11 +98,15 @@ $button_quick = $this->language->get('entry_quickview');
  </div>
   <script type="text/javascript">
     /* Load fratured carusel*/
+    var jcarusel_visible = 4;
+    if($(window).width() < 790){
+      jcarusel_visible = 1;
+    }
     $('#carousel_fratured').jcarousel({
       vertical: false,
-      visible: 4,
+      visible: jcarusel_visible,
       scroll: 1,
-      auto: 3,
+      auto: 2,
       wrap: 'circular'
     });
 
